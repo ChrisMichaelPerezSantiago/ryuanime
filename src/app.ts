@@ -27,22 +27,3 @@ class App {
 }
 
 export default new App().app;
-
-
-//const app = express();
-//
-//
-//app.use(cors());
-//app.use(bodyparser.json());
-//
-//app.get('/', (req: express.Request, res: express.Response) => {
-//  res.json({
-//    message: 'ᕦ(ò_óˇ)ᕤ'
-//  });
-//});
-//
-//app.use('/api/v1', router);
-//
-//app.use(middleware.requestLoggerMiddleware)
-//app.use(middleware.notFound);
-//app.use(middleware.errorHandler);
