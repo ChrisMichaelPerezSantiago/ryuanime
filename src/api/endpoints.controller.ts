@@ -1,4 +1,4 @@
-import * as scraper from '../scraper';
+import * as scraper from './scraper';
 import * as express from 'express';
 const router = express.Router();
 
@@ -22,5 +22,16 @@ router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) 
       });
     });
 });
+
+router.get('/letter/:letter', (req: express.Request, res: express.Response) => {
+  let letter = req.params.letter.toUpperCase();
+  scraper.getAnimesListByLetter(letter)
+    .then(animes => {
+      res.json({
+        animes
+      });
+    });
+});
+
 
 export default router;
