@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "esModuleInterop": false,
     "target": "esnext",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
   "include": [
     "src/**/*.ts"
