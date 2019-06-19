@@ -78,7 +78,7 @@ npm run dev
 
 ### GET /search/[title] 
 - *For now only returns the titles of the first page of jkanime `10 title per pages`*
-- *The `extra` key is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
+- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
 
 | title       |
 | ----------- |
@@ -106,7 +106,7 @@ npm run dev
 ```
 
 ### GET /letter/[a-z]/[page]
-- *The `extra` key is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
+- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
 - *Returns a list of `20 titles` per N pages*
 
 | a-z         | page            |
