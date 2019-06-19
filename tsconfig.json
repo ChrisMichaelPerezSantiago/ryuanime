@@ -6,7 +6,8 @@
     "allowSyntheticDefaultImports": true,
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "node_modules/@types/puppeteer/index.d.ts"
   ],
   "exclude": [
     "node_modules"
