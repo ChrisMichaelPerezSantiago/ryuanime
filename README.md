@@ -18,6 +18,7 @@
 </p>
 
 *A free anime streaming , scraping jkanime.*
+<img alt="ryuanime" src="./assets/img/logo.png">
 
 ### 👷🚧In construction 
 
