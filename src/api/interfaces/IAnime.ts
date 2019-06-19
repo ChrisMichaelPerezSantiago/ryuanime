@@ -1,8 +1,8 @@
 export default interface IAnime {
-   title: String,
-   id: String,
-   poster: String,
-   type: String,
-   extra: any,
-   synopsis: String,
+  title: string,
+  id: string,
+  poster: string,
+  type: string,
+  extra: any,
+  synopsis: string,
 }

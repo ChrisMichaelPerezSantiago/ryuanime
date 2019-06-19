@@ -14,7 +14,7 @@ class App {
 
   private config(): void {
     this.app.use(cors());
-    this.app.use(bodyparser.json());
+    this.app.use(bodyparser.json({type: '*'}));
     this.app.use(bodyparser.urlencoded({ extended: false }));
     this.app.get('/', (req: express.Request, res: express.Response) => {
       res.json({

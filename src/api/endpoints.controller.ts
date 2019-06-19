@@ -4,7 +4,8 @@ const router = express.Router();
 
 
 router.get('/search/:title', (req: express.Request, res: express.Response) => {
-  scraper.searchAnime(req.params.title)
+  const title: string = req.params.title;
+  scraper.searchAnime(title)
     .then(animes => {
       res.json({
         animes
@@ -13,19 +14,20 @@ router.get('/search/:title', (req: express.Request, res: express.Response) => {
 });
 
 router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) => {
-  let id = req.params.id;
-  let chapter = req.params.chapter;
+  const id: string = req.params.id;
+  const chapter: number = req.params.chapter;
   scraper.getAnimeVideo(id, chapter)
-    .then(anime => {
+    .then(video => {
       res.json({
-        anime
+        video
       });
     });
 });
 
-router.get('/letter/:letter', (req: express.Request, res: express.Response) => {
-  let letter = req.params.letter.toUpperCase();
-  scraper.getAnimesListByLetter(letter)
+router.get('/letter/:letter/:page', (req: express.Request, res: express.Response) => {
+  const letter: string = req.params.letter.toUpperCase();
+  const page: number = req.params.page;
+  scraper.getAnimesListByLetter(letter , page)
     .then(animes => {
       res.json({
         animes
