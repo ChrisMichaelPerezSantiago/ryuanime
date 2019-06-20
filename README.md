@@ -134,6 +134,32 @@ npm run dev
 }
 ```
 
+### GET /latest
+- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
+- *Returns a list of `40 latest titles`*
+
+| latest         | page            |
+| ----------- | --------------- |
+| list of last titles added.| one page |
+
+```json
+{
+  "animes": [
+    [
+      {
+        "title": "Re:Zero kara Hajimeru Isekai Seikatsu: Memory Snow",
+        "id": "rezero-kara-hajimeru-isekai-seikatsu-memory-snow",
+        "poster": "https://cdn.jkanime.net/assets/images/animes/image/rezero-kara-hajimeru-isekai-seikatsu-memory-snow.jpg",
+        "type": "unknown",
+        "extra": {.......},
+        "synopsis": "unknown"
+      }
+    ], 
+    .......
+  ]
+}
+```
+
 ## Middleware
 *As the project grows, more functions will be implemented soon.*
 
