@@ -177,7 +177,10 @@ npm run dev
 * Github: [@ChrisMichaelPerezSantiago](https://github.com/ChrisMichaelPerezSantiago)
 
 ## ❤️ Contributors
- If you are interested in contributing to this project, you can contact me at my email, and I will gladly respond to the messages.
+ If you are interested in contributing to this project, you can contact me at my email, and I will gladly respond to the messages. For more see the [CODE OF CONDUCT](https://github.com/ChrisMichaelPerezSantiago/ryuanime/blob/master/CODE_OF_CONDUCT.md)
+ 
+## 💩 Issue Template
+If you have a problem, you can visit the [BUG REPORT](https://github.com/ChrisMichaelPerezSantiago/ryuanime/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) or [FEATURE REQUEST](https://github.com/ChrisMichaelPerezSantiago/ryuanime/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) template for more details.
 
 ## Show your support
 
