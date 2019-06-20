@@ -7,9 +7,11 @@ router.get('/search/:title', (req: express.Request, res: express.Response) => {
   const title: string = req.params.title;
   scraper.searchAnime(title)
     .then(animes => {
-      res.json({
+      res.status(200).json({
         animes
       });
+    }).then((err) =>{
+      console.log(err)
     });
 });
 
@@ -18,9 +20,11 @@ router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) 
   const chapter: number = req.params.chapter;
   scraper.getAnimeVideo(id, chapter)
     .then(video => {
-      res.json({
+      res.status(200).json({
         video
       });
+    }).then((err) =>{
+      console.log(err)
     });
 });
 
@@ -29,11 +33,27 @@ router.get('/letter/:letter/:page', (req: express.Request, res: express.Response
   const page: number = req.params.page;
   scraper.getAnimesListByLetter(letter , page)
     .then(animes => {
-      res.json({
+      res.status(200).json({
         animes
       });
+    }).catch((err) =>{
+      console.log(err);
     });
 });
+
+
+router.get('/latest', (req: express.Request, res: express.Response) => {
+  scraper.lastAnimesAdded()
+    .then(animes => {
+      res.status(200).json({
+        animes
+      });
+    }).then((err) =>{
+      console.log(err)
+    });
+});
+
+
 
 
 export default router;
