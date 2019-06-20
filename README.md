@@ -1,4 +1,5 @@
 <h1 align="center">Welcome to ryuanime 👋</h1>
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg" />
@@ -193,3 +194,19 @@ This project is [MIT](https://github.com/ChrisMichaelPerezSantiago/ryuanime/blob
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/chrisperezsantiago/"><img src="https://avatars0.githubusercontent.com/u/21962584?v=4" width="75px;" alt="Chris Michael"/><br /><sub><b>Chris Michael</b></sub></a><br /><a href="#question-ChrisMichaelPerezSantiago" title="Answering Questions">💬</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Code">💻</a> <a href="#design-ChrisMichaelPerezSantiago" title="Design">🎨</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Documentation">📖</a> <a href="#ideas-ChrisMichaelPerezSantiago" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ChrisMichaelPerezSantiago" title="Maintenance">🚧</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
