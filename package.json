@@ -4,7 +4,7 @@
   "description": "A free anime streaming , scraping jkanime.",
   "main": "index.js",
   "scripts": {
-    "start": "node ts-node src/index.ts",
+    "start": "npm run dev",
     "dev": "nodemon --watch 'src/*.ts' --exec ts-node-dev src/index.ts",
     "lint": "eslint --fix src",
     "audit": "snyk test",
