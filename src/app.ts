@@ -1,3 +1,4 @@
+require('events').EventEmitter.defaultMaxListeners = 100;
 require('dotenv').config();
 import * as express from "express";
 import * as cors from 'cors';
