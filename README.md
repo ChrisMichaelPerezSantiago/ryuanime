@@ -80,7 +80,6 @@ npm run dev
 
 ### GET /search/[title] 
 - *For now only returns the titles of the first page of jkanime `10 title per pages`*
-- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
 
 | title       |
 | ----------- |
@@ -98,7 +97,6 @@ npm run dev
         "id": "tokyo-ghoul",
         "poster": "https://cdn.jkanime.net/assets/images/animes/image/tokyo-ghoul.jpg",
         "type": "Serie / 12 Eps",
-        "extra": "...",
         "synopsis": "En Tokyo ocurren asesinatos misteriosos cometidos por Ghouls, seres desconocidos que comen carne humana, un día Kaneki Ken un joven de 18 años que cursa la Universidad conoce a una chica en un restaurante y la invita a salir, pero luego se da cuenta que ella es un Ghoul y sufre un ataque de parte…"
       }
     ],
@@ -108,7 +106,6 @@ npm run dev
 ```
 
 ### GET /letter/[a-z]/[page]
-- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
 - *Returns a list of `20 titles` per N pages*
 
 | a-z         | page            |
@@ -127,7 +124,6 @@ npm run dev
         "id": "abarenbou-kishi-matsutarou",
         "poster": "https://cdn.jkanime.net/assets/images/animes/image/abarenbou-kishi-matsutarou.jpg",
         "type": "Serie / 23 Eps",
-        "extra": {...},
         "synopsis": "Matsutarou Sakaguchi es un hombre matón gigante con fuerza mucho más allá de la gente común. Él nunca pronunció palabras como \"trabajar duro\", \"luchar\" y \"sueño\" como el típico protagonista del manga shonen. Sin embargo, él es más fuerte que nadie y sin igual en la lucha de sumo. Su mayor…"
       }
     ],
@@ -137,7 +133,6 @@ npm run dev
 ```
 
 ### GET /latest
-- *The `extra` value is empty, but it is supposed to contain the mp4 of each episode. It will be added soon.*
 - *Returns a list of `40 latest titles`*
 
 | latest         | page            |
@@ -153,7 +148,6 @@ npm run dev
         "id": "rezero-kara-hajimeru-isekai-seikatsu-memory-snow",
         "poster": "https://cdn.jkanime.net/assets/images/animes/image/rezero-kara-hajimeru-isekai-seikatsu-memory-snow.jpg",
         "type": "unknown",
-        "extra": {.......},
         "synopsis": "unknown"
       }
     ], 
