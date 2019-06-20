@@ -8,6 +8,32 @@ import IAnime from './interfaces/IAnime'
 
 const { JSDOM } = jsdom;
 
+const lastAnimesAdded = async () =>{
+  const res = await fetch(`${url}`);
+  const body = await res.text();
+  const animes = [];
+  const $ = cheerio.load(body);
+  $('.portada-box').each(function (index, element) {
+    const $element = $(element);
+    const title = $element.find('h2.portada-title a').attr('title');
+    //const synopsis = $element.find('div #ainfo p').text();
+    //const type = $element.find('span.eps-num').text();
+    const id = $element.find('h2.portada-title a').attr('href').split('/')[3];
+    const poster = $element.find('a').children('img').attr('src');
+    const extra = getAnimeVideo(id, undefined);
+    const anime: IAnime[] = [{
+      title: title,
+      id: id,
+      poster: poster,
+      type: 'unknown',
+      extra: extra,
+      synopsis: 'unknown',
+    }]
+    animes.push(anime);
+  });
+  return animes;
+}
+
 const getAnimesListByLetter = async (letter: string, page: number) => {
   const res = await fetch(`${searchUrlLetter}${letter}/${page}`);
   const body = await res.text();
@@ -71,22 +97,24 @@ const getAnimeVideo = async (id: string, chapter: number) => {
   const frame = await elementHandle.contentFrame();
   const video = await frame.$eval('#jkvideo_html5_api', el =>
     Array.from(el.getElementsByTagName('source')).map(e => e.getAttribute("src")));
+  await browser.close();
   return video;
 }
 
 
 // Testing Testing Asynchronous Code
-(async () => {
-  const T = await getAnimeVideo('tokyo-magnitude-80', 1)
-    .then(async (data) => {
-      return await data;
-    })
-  console.log(T)
-})()
+//(async () => {
+//  const T = await getAnimeVideo('tokyo-magnitude-80', 1)
+//    .then(async (data) => {
+//      return await data;
+//    })
+//  console.log(T)
+//})()
 
 
 export {
   searchAnime,
   getAnimeVideo,
-  getAnimesListByLetter
+  getAnimesListByLetter,
+  lastAnimesAdded
 };
