@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@types/cheerio": "^0.22.11",
+    "@types/events": "^3.0.0",
     "@types/jsdom": "^12.2.3",
     "@types/node-fetch": "^2.3.7",
     "add": "^2.0.6",
