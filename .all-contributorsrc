@@ -1,0 +1,30 @@
+{
+  "projectName": "ryuanime",
+  "projectOwner": "ChrisMichaelPerezSantiago",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 75,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "ChrisMichaelPerezSantiago",
+      "name": "Chris Michael",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21962584?v=4",
+      "profile": "https://www.linkedin.com/in/chrisperezsantiago/",
+      "contributions": [
+        "question",
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "maintenance",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
