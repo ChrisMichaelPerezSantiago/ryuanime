@@ -4,8 +4,7 @@
   "description": "A free anime streaming , scraping jkanime.",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "nodemon --watch 'src/*.ts' --exec ts-node-dev src/index.ts",
+    "start": "nodemon --watch 'src/*.ts' --exec ts-node-dev src/index.ts",
     "lint": "eslint --fix src",
     "audit": "snyk test",
     "test": "mocha -w",
@@ -23,6 +22,7 @@
   },
   "dependencies": {
     "@types/cheerio": "^0.22.11",
+    "@types/cors": "^2.8.5",
     "@types/events": "^3.0.0",
     "@types/jsdom": "^12.2.3",
     "@types/node-fetch": "^2.3.7",
@@ -31,6 +31,7 @@
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "compose-middleware": "^5.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "express": "^4.17.1",
