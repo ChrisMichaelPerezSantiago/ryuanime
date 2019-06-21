@@ -28,7 +28,7 @@ This project will be completely a desktop version. For this `Electron` will be u
 ### 👷🚧In construction 
 *I must say that as the days go by the project can undergo great changes. That is why I ask for your patience, to which the documentation is updated.*
 
-- [ ] Frontend - *the vuejs framework will be used SOON!*
+- [x] Frontend - *in process*
 - [x] Backend - *in process*
 - [x] Scraping jkanime web page - *in process* 
 - [x] Good Documentation - *in process*
