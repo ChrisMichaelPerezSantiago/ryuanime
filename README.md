@@ -25,6 +25,9 @@
 
 This project will be completely a desktop version. For this `Electron` will be used, a framework developed by GitHub which allows us to develop `multiplatform systems` based on `web technologies`, and maybe it will have its web version, but everything will depend on the development flow.
 
+## Where does the content come from?
+The content comes from the page of `jkanime.` For this, `scraping` has been done on the page of jkanime.
+
 ### 👷🚧In construction 
 *I must say that as the days go by the project can undergo great changes. That is why I ask for your patience, to which the documentation is updated.*
 
@@ -33,6 +36,7 @@ This project will be completely a desktop version. For this `Electron` will be u
 - [x] Scraping jkanime web page - *in process* 
 - [x] Good Documentation - *in process*
 - [ ] Tests - *SOON!*
+- [ ] Deployment -  *SOON!*
 
 ## Branches
 - [x] master branch - *in use*
@@ -164,6 +168,15 @@ npm run dev
 | requestLoggerMiddleware | <li>req.method</li><li>req.originalUrl</li><li>req.statusCode</li> |
 | errorHandler            | <li>err.message</li><li>err.stack</li> |
 | notFound                | <li>Error - req.originalUrl</li>
+
+
+## 🚀 Deployment
+
+*`Now.sh` is a Realtime Global Deployments platform. It provides an easy way to deploy websites, applications and services built and powered with JavaScript (Node.js) or Docker*
+
+- **Deployment of the node/express API** - Deployment of the API for official use. So we do not have to use localhost to handle the endpoints in production.
+
+- **Deployment of the ryuanime web site** - Deployment for official use.
 
 ## Author
 
