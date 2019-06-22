@@ -1,4 +1,4 @@
 export const state = {
-  data: [],
+  latest: [],
   isLoading: true
 };

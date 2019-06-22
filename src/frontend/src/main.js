@@ -7,6 +7,7 @@ Vue.config.productionTip = false;
 
 import '@/assets/css/tailwind.css';
 
+
 new Vue({
   router,
   store,
