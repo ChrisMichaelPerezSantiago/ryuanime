@@ -3,7 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/store";
 
+import vSuggest from 'v-suggest';
+
 Vue.config.productionTip = false;
+
+Vue.use(vSuggest);
 
 import "@/assets/css/tailwind.css";
 import "@/assets/css/main.css";
