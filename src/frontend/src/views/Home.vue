@@ -32,12 +32,21 @@
         </div>
 
     </div>
+    
 
     <!-- content inside -->
-    <div class="px-6 py-4 flex-1 overflow-y-scroll">
-      <pre>{{latest}}</pre>
+    <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
+      <div v-if="isLoading">
+        Loading ...
+      </div>
+      <div class="flex flex-wrap" v-else>
+        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4" v-for="(anime , index) in latest.animes" :key="index">
+          <LatestAnime :anime="anime[0]"/>
+        </div>
+      </div>
     </div>
 
+    <!-- footer -->
     <Footer/>
   
   </div>
@@ -45,12 +54,14 @@
 
 <script>
   import Footer from "./Footer"
+  import LatestAnime from '../components/LatestAnime'
   import {mapState} from 'vuex'
   import store from '../store/store'
 
   export default {
     name: "home",
     components:{
+      LatestAnime,
       Footer
     },
     computed:{
