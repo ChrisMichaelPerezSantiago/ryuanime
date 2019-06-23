@@ -36,16 +36,38 @@
 
     </div>
     
-
     <!-- content inside -->
     <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
       <div v-if="isLoading">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
       <div class="flex flex-wrap" v-else>
-        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4" v-for="(anime , index) in latest" :key="index">
-          <LatestAnime :anime="anime"/>
+        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4">
+          <Video :Id="id" :Title="title" :Eps="eps"/>
         </div>
+
+         <!--  aside -->
+        <aside class="w-full md:max-w-xs xl:max-w-full xl:w-1/4 md:pl-5 mt-5 md:mt-4">
+          <!-- up next -->
+          <div class="w-full">
+            <div class="flex w-full items-center justify-between mb-3">
+              <span><i class="fas fa-sort-numeric-down"></i> Select Episode
+                <!-- select episode -->
+                <select class="eps-select" v-model="eps">
+                  <option v-for="(episode , index) in options"
+                    :value="episode"
+                    :key="index">
+                    {{ episode }}
+                  </option>
+                </select>
+              </span>
+            
+            </div>
+
+            <h1>{{eps}}</h1>
+
+          </div>
+        </aside>
       </div>
     </div>
 
@@ -57,19 +79,22 @@
 
 <script>
   import Footer from "./Footer"
-  import LatestAnime from '../components/LatestAnime'
+  import Video from '../components/Video'
   import {mapState , mapGetters} from 'vuex'
   import store from '../store/store'
 
   export default {
     name: "home",
     components:{
-      LatestAnime,
-      Footer
+      Video
     },
     data(){
       return{
-        latestModel: ''
+        latestModel: '',
+        id: this.$route.params.id,
+        title: this.$route.params.title,
+        eps: "1",
+        options: Array.from({length: 10}, (v , k) => k + 1)
       }
     },
     computed:{
@@ -81,3 +106,10 @@
   };
 </script>
 
+  
+
+<style scoped>
+eps-select{
+  border-color: coral !important;
+}
+</style>
