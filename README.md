@@ -28,6 +28,11 @@ This project will be completely a desktop version. For this `Electron` will be u
 ## Where does the content come from?
 The content comes from the page of `jkanime.` For this, `scraping` has been done on the page of jkanime.
 
+## 📣Read this please!📣
+I must mention that since the information comes from a Latin website, I must make it clear that the videos are with `sub Spanish` and `voices in Japanese.` I am very sorry that this application may not be useful for the English speaker, so the application does not achieve a higher popularity among users.
+
+Apologies!
+
 ### 👷🚧In construction 
 *I must say that as the days go by the project can undergo great changes. That is why I ask for your patience, to which the documentation is updated.*
 
