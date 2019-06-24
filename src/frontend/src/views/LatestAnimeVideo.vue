@@ -43,7 +43,7 @@
       </div>
       <div class="flex flex-wrap" v-else>
         <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4">
-          <Video :Id="id" :Title="title" :Eps="eps" :Synopsis="synopsis"/>
+          <Video :Id="id" :Title="title" :Eps="eps" :Synopsis="synopsis" :ContentType="types.content"/>
         </div>
 
          <!--  aside -->
@@ -54,9 +54,10 @@
               <span><i class="fas fa-sort-numeric-down"></i> Select Episode
                 <!-- select episode -->
                 <select class="list-reset border border-purple-200 rounded w-20 font-sans" v-model="eps">
-                  <option v-for="(episode , index) in options"
+                  <option v-for="(episode , index) in Array.from({length: types.totalEps}, (v , k) => k + 1)"
                     :value="episode"
-                    :key="index">
+                    :key="index"
+                    >
                     {{ episode }}
                   </option>
                 </select>
@@ -98,9 +99,11 @@
         title: this.$route.params.title,
         synopsis: this.$route.params.synopsis,
         poster: this.$route.params.poster,
-
-        eps: "1",
-        options: Array.from({length: 10}, (v , k) => k + 1) //[1 .. N] N=10 , testing only
+        types:{
+          totalEps: this.$route.params.type.replace(/[^0-9]/g,''),
+          content: this.$route.params.type.split('/')[0]
+        } ,
+        eps: 2,
       }
     },
     computed:{

@@ -9,7 +9,7 @@
             <p class="text-sm leading-tight text-grey-dark">    </p>
           </div>
           <div class="flex flex-wrap">
-            <router-link  :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster}}" tag="button" class="text-xs font-semibold rounded-full px-4 py-1 mx-3 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-gray-600">
+            <router-link  :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type}}" tag="button" class="text-xs font-semibold rounded-full px-4 py-1 mx-3 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-gray-600">
               <i class="fas fa-headphones"></i>
               Watch
             </router-link>

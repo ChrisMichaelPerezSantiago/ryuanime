@@ -24,6 +24,7 @@ export const actions = {
     console.log("id: " , info.id , "chapter: " , info.eps)
     A.get(`${API_URL_ENDPOINT.video}` + "/" + `${info.id}` + "/" + `${info.eps}`)
       .then((res) =>{
+        console.log("video src = " , res.data)
         commit('SET_VIDEO_ANIME' , res.data);
         commit('IS_LOADING' , false);
       }).catch((err) =>{

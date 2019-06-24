@@ -10,7 +10,7 @@ router.get('/search/:title', (req: express.Request, res: express.Response) => {
       res.status(200).json({
         animes
       });
-    }).then((err) =>{
+    }).catch((err) =>{
       console.log(err)
     });
 });
@@ -23,7 +23,7 @@ router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) 
       res.status(200).json({
         video
       });
-    }).then((err) =>{
+    }).catch((err) =>{
       console.log(err)
     });
 });
