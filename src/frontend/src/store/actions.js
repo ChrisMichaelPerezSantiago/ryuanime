@@ -3,10 +3,12 @@ import axios from 'axios';
 const BASE_API_URL= 'http://localhost:3000/api/v1/';
 const API_URL_ENDPOINT = {
   latest: 'latest',
-  video: 'anime'
+  video: 'anime',
+  letter: 'letter'
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
+const pagin = require('./paginator/index.js');
 
 export const actions = {
   GET_LATEST_DATA({commit}){
@@ -15,18 +17,29 @@ export const actions = {
       commit('SET_LATEST_DATA' , animes);
       commit('IS_LOADING' , false);
     }).catch((err) =>{
-      console.error(err)
+      console.error(err);
     });
   },
   GET_ANIME_VIDEO({commit} , info){
     console.log("id: " , info.id , "chapter: " , info.eps)
     A.get(`${API_URL_ENDPOINT.video}` + "/" + `${info.id}` + "/" + `${info.eps}`)
       .then((res) =>{
-        console.log("video =>" , res.data)
         commit('SET_VIDEO_ANIME' , res.data);
         commit('IS_LOADING' , false);
       }).catch((err) =>{
-      console.error(err)
-    })
+      console.error(err);
+    });
+  },
+  GET_ANIME_ALPHA({commit} , info){
+    A.get(`${API_URL_ENDPOINT.letter}` + "/" + info.letter + "/" + info.page)
+      .then((res) =>{
+        const animes = res.data.animes.map((data) => data[0]);
+        console.log("\n⚠️ ANIME BY LETTER (res): " , animes);
+        const dataPaginated = pagin.paginator(animes , info.page , 10);
+        commit('SET_ANIME_ALPHA' , dataPaginated);
+        commit('IS_LOADING' , false);
+      }).then((err) =>{
+        console.log(err);
+    });
   }
 };

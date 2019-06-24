@@ -4,9 +4,9 @@
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
         <div class="flex flex-col">
-            <h3 class="text-grey-darkest mb-1 font-extrabold">Latest</h3>
+            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Latest</h3>
             <div class="text-grey-dark text-sm truncate">
-              Enjoy the world of anime 
+              💖 Enjoy the world of anime 
             </div>
         </div>
         
@@ -43,7 +43,7 @@
       </div>
       <div class="flex flex-wrap" v-else>
         <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4">
-          <Video :Id="id" :Title="title" :Eps="eps"/>
+          <Video :Id="id" :Title="title" :Eps="eps" :Synopsis="synopsis"/>
         </div>
 
          <!--  aside -->
@@ -53,7 +53,7 @@
             <div class="flex w-full items-center justify-between mb-3">
               <span><i class="fas fa-sort-numeric-down"></i> Select Episode
                 <!-- select episode -->
-                <select class="eps-select" v-model="eps">
+                <select class="list-reset border border-purple-200 rounded w-20 font-sans" v-model="eps">
                   <option v-for="(episode , index) in options"
                     :value="episode"
                     :key="index">
@@ -65,6 +65,9 @@
             </div>
 
             <h1>{{eps}}</h1>
+            <div class="max-w-sm rounded shadow-2xl border-indigo-900 overflow-hidden shadow-lg">
+              <img class="w-full" :src="poster" :alt="title">
+            </div>
 
           </div>
         </aside>
@@ -93,8 +96,11 @@
         latestModel: '',
         id: this.$route.params.id,
         title: this.$route.params.title,
+        synopsis: this.$route.params.synopsis,
+        poster: this.$route.params.poster,
+
         eps: "1",
-        options: Array.from({length: 10}, (v , k) => k + 1)
+        options: Array.from({length: 10}, (v , k) => k + 1) //[1 .. N] N=10 , testing only
       }
     },
     computed:{

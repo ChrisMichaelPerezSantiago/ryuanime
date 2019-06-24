@@ -4,14 +4,14 @@
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
         <div class="flex flex-col">
-            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Latest</h3>
+            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Animes by Letter</h3>
             <div class="text-grey-dark text-sm truncate">
               💖 Enjoy the world of anime 
             </div>
         </div>
         
         <div class="flex-1 justify-center hidden sm:flex">
-          <v-suggest :data="latest" type="text" placeholder="Search Anime ..." show-field="title" v-model="latestModel" class="border border-grey px-8 py-2 w-1/2 max-w-md outline-none rounded-l"></v-suggest>
+          <v-suggest :data="animesByAlpha" type="text" placeholder="Search Anime ..." show-field="title" v-model="searchModel" class="border border-grey px-8 py-2 w-1/2 max-w-md outline-none rounded-l"></v-suggest>
           <!--<input type="text" placeholder="Search Anime ..." class="border border-grey px-3 py-2 w-1/2 max-w-md outline-none rounded-l"/> -->
           
             <button class="flex justify-center items-center bg-grey-lighter px-6 border border-grey border-l-0 rounded-r focus:outline-none hover:bg-gray-100">
@@ -22,9 +22,18 @@
             </svg>
           </button>
         </div>
-
         <!-- href links to platforms and social media -->
         <div class="flex justify-start items-center text-gray-500">
+          <h1>Alphabet</h1>
+          <select class="list-reset border border-purple-200 rounded m-3 w-20 font-sans" v-model="letter">
+            <option v-for="(char , index) in options"
+              :value="char"
+              :key="index"
+            >
+              {{char}}
+            </option>
+          </select>
+
           <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime" class="block flex items-center hover:text-gray-700 mr-5">
             <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
               <title>GitHub</title>
@@ -33,7 +42,6 @@
             </svg> 
           </a>
         </div>
-
     </div>
     
 
@@ -43,11 +51,25 @@
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
       <div class="flex flex-wrap" v-else>
-        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4" v-for="(anime , index) in latest" :key="index">
+        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4" v-for="(anime , index) in animesByAlpha" :key="index">
           <LatestAnime :anime="anime"/>
         </div>
       </div>
     </div>
+
+     <paginate
+      class="paginator-container list-reset border border-purple-200 rounded w-auto font-sans"
+      v-model="page"
+      :page-count="animesByAlpha.length"
+      :page-range="3"
+      :margin-pages="2"
+      :click-handler="pageHandler"
+      :prev-text="'Prev'"
+      :next-text="'Next'"
+      :container-class="'pagination'"
+      :page-class="'page-item'">
+    </paginate>
+
 
     <!-- footer -->
     <Footer/>
@@ -62,22 +84,48 @@
   import store from '../store/store'
 
   export default {
-    name: "home",
+    name: "AnimesByLetter",
     components:{
       LatestAnime,
       Footer
     },
     data(){
       return{
-        latestModel: ''
+        page: 0,
+        searchModel: '',
+        letter: "a",
+        options: [...Array(26).keys()].map(i => String.fromCharCode(i + 97)) //[a .. z]
       }
     },
     computed:{
-      ...mapState(['latest' , 'isLoading']),
+      ...mapState(['animesByAlpha' , 'isLoading']),
     },
     created(){
-      store.dispatch('GET_LATEST_DATA')
+      let info = {letter: this.letter , page: this.page}
+      store.dispatch('GET_ANIME_ALPHA' , info)
+    },
+    methods:{
+      pageHandler(){
+        try{
+          let info = {letter: this.letter , page: this.page}
+          store.dispatch('GET_ANIME_ALPHA' , info)
+        }catch(err){
+          console.log(err);
+        }
+      }
     }
   };
 </script>
 
+
+<style lang="css">
+  .paginator-container{
+    display: flex !important;
+  }
+  .paginator-container a{
+    color: #3c366b !important;
+    float: left !important;
+    padding: 8px 16px !important;
+    text-decoration: none !important;
+  }
+</style>
