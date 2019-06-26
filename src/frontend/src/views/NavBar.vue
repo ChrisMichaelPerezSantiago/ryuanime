@@ -26,7 +26,8 @@
 
            <!-- ROUTER LINK [to latest], this is the home page --> 
           <router-link to="/"><div class="bg-teal-dark py-1 px-4 text-white">ヅ Latest</div></router-link>
-       
+          <router-link to="/SearchAnime"><div class="bg-teal-dark py-1 px-4 text-white">ヅ Search</div></router-link>
+
        </div>
        <div class="mb-8">
           <div class="px-4 mb-2 text-white flex justify-between items-center">
