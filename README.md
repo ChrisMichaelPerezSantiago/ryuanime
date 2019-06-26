@@ -58,9 +58,21 @@ npm install
 
 ## Usage
 
+*Backend Node/Express API*
 ```sh
-npm run dev
+npm run start
 ```
+
+*Frontend Vuejs Web App*
+```sh
+npm run serve
+```
+
+*Frontend Electron Desktop App*
+```sh
+npm run electron:serve
+```
+
 
 ## Packages
 *These are the packages that I have taken more advantage for the project.*
