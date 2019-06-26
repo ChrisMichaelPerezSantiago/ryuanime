@@ -4,7 +4,8 @@ const BASE_API_URL= 'http://localhost:3000/api/v1/';
 const API_URL_ENDPOINT = {
   latest: 'latest',
   video: 'anime',
-  letter: 'letter'
+  letter: 'letter',
+  search: 'search'
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
@@ -42,5 +43,16 @@ export const actions = {
       }).then((err) =>{
         console.log(err);
     });
+  },
+  GET_ANIME_SEARCH({commit} , query){
+    A.get(`${API_URL_ENDPOINT.search}` + '/' + `${query}`)
+      .then((res) =>{
+        const animes = res.data.animes.map((data) => data[0]);
+        console.log("\n⚠️ ANIME SEARCHED  (res): " , animes);
+        commit('SET_ANIME_SEARCH' , animes);
+        commit('IS_LOADING' , false);
+      }).catch((err) =>{
+        console.log(err);
+      });
   }
 };

@@ -8,6 +8,9 @@ export const mutations = {
   SET_ANIME_ALPHA(state , payload){
     state.animesByAlpha = payload;
   },
+  SET_ANIME_SEARCH(state , payload){
+    state.searchAnimeList = payload;
+  },
   IS_LOADING(state , payload){
     state.isLoading = payload;
   }

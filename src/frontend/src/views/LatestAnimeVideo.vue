@@ -103,7 +103,7 @@
           totalEps: this.$route.params.type.replace(/[^0-9]/g,''),
           content: this.$route.params.type.split('/')[0]
         } ,
-        eps: 2,
+        eps: 1,
       }
     },
     computed:{
