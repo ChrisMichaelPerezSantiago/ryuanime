@@ -105,11 +105,12 @@
         this.letter = value;
         let letter = this.letter;
         let info = {letter: letter , page: this.page}
-        store.dispatch('GET_ANIME_ALPHA' , info)
-    
+        store.dispatch('GET_ANIME_ALPHA' , info);
       }
     },
     created(){
+      let info = {letter: this.letter , page: this.page}
+      store.dispatch('GET_ANIME_ALPHA' , info)
     },
     methods:{
       pageHandler(){
@@ -123,16 +124,3 @@
     }
   };
 </script>
-
-
-<style lang="css">
-  .paginator-container{
-    display: flex !important;
-  }
-  .paginator-container a{
-    color: #3c366b !important;
-    float: left !important;
-    padding: 8px 16px !important;
-    text-decoration: none !important;
-  }
-</style>

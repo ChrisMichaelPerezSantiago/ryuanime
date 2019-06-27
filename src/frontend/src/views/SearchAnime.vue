@@ -39,7 +39,7 @@
 
     <!-- content inside -->
     <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
-      <div v-if="isLoading">
+      <div v-if="searchAnimeList.length === 0">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
       <div class="flex flex-wrap" v-else>
@@ -84,6 +84,7 @@
     },
     methods:{
       doSearch: function(){
+        if(this.searchModel === '') return;
         store.dispatch('GET_ANIME_SEARCH' , this.searchModel)
       }
     }

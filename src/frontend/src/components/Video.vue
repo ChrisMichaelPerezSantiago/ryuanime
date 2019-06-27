@@ -9,7 +9,7 @@
           <video 
             id="video"
             controls
-          ><source v-if="videos.video" :src="videos.video" type="video/mp4"></video>
+          ><source :src="videos.video" type="video/mp4"></video>
         </div>
         <!-- video info -->
         <div class="flex flex-wrap items-end">
@@ -74,6 +74,7 @@
         let eps = this.eps;
         let info = {id: this.id , eps: eps}
         store.dispatch('GET_ANIME_VIDEO' , info)
+        alert("Wait a few seconds for the video to load\nIt's normal that it takes a bit")
       },
       "videos.video": function(value){
         this.videos.video = value;

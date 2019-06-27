@@ -4,7 +4,7 @@
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
         <div class="flex flex-col">
-            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Latest</h3>
+            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Last Animes Added</h3>
             <div class="text-grey-dark text-sm truncate">
               💖 Enjoy the world of anime 
             </div>
