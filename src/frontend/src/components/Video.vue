@@ -77,6 +77,7 @@
       },
       "videos.video": function(value){
         this.videos.video = value;
+        document.getElementById('video').load();
       }
     },
   };
