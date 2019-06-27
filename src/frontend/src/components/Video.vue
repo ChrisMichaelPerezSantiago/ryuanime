@@ -9,7 +9,7 @@
           <video 
             id="video"
             controls
-          ><source :src="videos.video" type="video/mp4"></video>
+          ><source v-if="videos.video" :src="videos.video" type="video/mp4"></video>
         </div>
         <!-- video info -->
         <div class="flex flex-wrap items-end">
@@ -68,9 +68,16 @@
     computed:{
       ...mapState(['videos' , 'isLoading'])
     },
-    created(){
-      let info = {id: this.id , eps: this.eps}
-      store.dispatch('GET_ANIME_VIDEO' , info)
+    watch:{
+      "Eps": function(value){
+        this.eps = value;
+        let eps = this.eps;
+        let info = {id: this.id , eps: eps}
+        store.dispatch('GET_ANIME_VIDEO' , info)
+      },
+      "videos.video": function(value){
+        this.videos.video = value;
+      }
     },
   };
 </script>

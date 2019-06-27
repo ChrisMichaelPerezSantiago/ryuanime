@@ -111,6 +111,11 @@
     },
     created(){
       store.dispatch('GET_LATEST_DATA')
+    },
+    watch:{
+      eps: function(){
+        store.dispatch('GET_LATEST_DATA')
+      }
     }
   };
 </script>
