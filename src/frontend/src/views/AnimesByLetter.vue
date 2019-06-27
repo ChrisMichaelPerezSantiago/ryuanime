@@ -100,9 +100,16 @@
     computed:{
       ...mapState(['animesByAlpha' , 'isLoading']),
     },
+    watch:{
+      "letter": function(value){
+        this.letter = value;
+        let letter = this.letter;
+        let info = {letter: letter , page: this.page}
+        store.dispatch('GET_ANIME_ALPHA' , info)
+    
+      }
+    },
     created(){
-      let info = {letter: this.letter , page: this.page}
-      store.dispatch('GET_ANIME_ALPHA' , info)
     },
     methods:{
       pageHandler(){
