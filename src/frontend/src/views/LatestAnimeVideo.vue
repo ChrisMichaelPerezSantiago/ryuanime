@@ -100,7 +100,7 @@
         synopsis: this.$route.params.synopsis,
         poster: this.$route.params.poster,
         types:{
-          totalEps: this.$route.params.type.replace(/[^0-9]/g,''),
+          totalEps: this.$route.params.type.replace(/[^0-9]/g,'') || 25, //,
           content: this.$route.params.type.split('/')[0]
         } ,
         eps: 1,
