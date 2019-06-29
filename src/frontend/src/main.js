@@ -18,5 +18,8 @@ Vue.component('paginate', Paginate)
 new Vue({
   router,
   store,
+  beforeCreate(){
+    store.commit('initialiseStore')
+  },
   render: h => h(App)
 }).$mount("#app");
