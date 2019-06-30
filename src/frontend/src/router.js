@@ -4,6 +4,8 @@ import Home from "./views/Home.vue";
 import LatestAnimeVideo from "./views/LatestAnimeVideo"
 import AnimesByLetter from "./views/AnimesByLetter"
 import SearchAnime from "./views/SearchAnime"
+import NotFound from "./views/NotFound"
+
 
 Vue.use(Router);
 
@@ -30,6 +32,11 @@ export default new Router({
       path: "/SearchAnime",
       name: "SearchAnime",
       component: SearchAnime
+    },
+    {
+      "path": "*",
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 });
