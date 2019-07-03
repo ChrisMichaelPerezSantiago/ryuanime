@@ -3,6 +3,7 @@ require('dotenv').config();
 import * as express from "express";
 import * as cors from 'cors';
 import * as bodyparser from 'body-parser';
+import * as helmet from 'helmet';
 import { router } from './api/index';
 import middleware from "./middleware/index";
 
@@ -14,6 +15,7 @@ class App {
   }
 
   private config(): void {
+    this.app.use(helmet());
     this.app.use(cors());
     this.app.use(bodyparser.json({type: '*'}));
     this.app.use(bodyparser.urlencoded({ extended: false }));
