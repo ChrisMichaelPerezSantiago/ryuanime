@@ -24,6 +24,18 @@
         "maintenance",
         "test"
       ]
+    },
+    {
+      "login": "w3cj",
+      "name": "CJ R.",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14241866?v=4",
+      "profile": "https://w3cj.sh",
+      "contributions": [
+        "code",
+        "content",
+        "example",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
