@@ -51,6 +51,7 @@
 </template>
 
 <script>
+  import swal from 'sweetalert';
   import {mapState} from 'vuex'
   import store from '../store/store'
 
@@ -74,7 +75,7 @@
         let eps = this.eps;
         let info = {id: this.id , eps: eps}
         store.dispatch('GET_ANIME_VIDEO' , info)
-        alert("Wait a few seconds for the video to load\nIt's normal that it takes a bit")
+        swal("Message!", "Wait a few seconds for the video to load\nIt's normal that it takes a bit", "success");
       },
       "videos.video": function(value){
         this.videos.video = value;
