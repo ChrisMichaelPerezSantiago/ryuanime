@@ -4,6 +4,17 @@ body{
   -moz-text-size-adjust: none;
 }
 
+
+/*********************** swal ************************
+ *                                                   *
+ ****************************************************/ 
+.swal-button , div.swal-icon.swal-icon--success > span{
+  background-color: #667eea;
+}
+.swal-icon--success{
+  border-color: #667eea;
+}
+
 /******************** pagination *********************
  *                                                   *
  ****************************************************/ 
