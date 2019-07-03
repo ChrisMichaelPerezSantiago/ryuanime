@@ -1,4 +1,4 @@
-require('events').EventEmitter.defaultMaxListeners = 100;
+//require('events').EventEmitter.defaultMaxListeners = 100;
 require('dotenv').config();
 import * as express from "express";
 import * as cors from 'cors';
@@ -17,6 +17,11 @@ class App {
     this.app.use(cors());
     this.app.use(bodyparser.json({type: '*'}));
     this.app.use(bodyparser.urlencoded({ extended: false }));
+    this.app.use(function(req: express.Request, res: express.Response , next: express.NextFunction){
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    });
     this.app.get('/', (req: express.Request, res: express.Response) => {
       res.json({
         message: 'ᕦ(ò_óˇ)ᕤ'

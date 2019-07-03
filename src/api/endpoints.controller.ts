@@ -44,7 +44,7 @@ router.get('/letter/:letter/:page', (req: express.Request, res: express.Response
 
 router.get('/latest', (req: express.Request, res: express.Response) => {
   scraper.lastAnimesAdded()
-    .then(animes => {
+    .then(async animes => {
       res.status(200).json({
         animes
       });
