@@ -12,13 +12,13 @@ const animeContentHandler = async (id: string) =>{
   const body = await res.text();
   const extra = [];
   const $ = cheerio.load(body);
-  $('div.serie-info').each(async (index , element) =>{
+  $('div.serie-info').each(function(index , element){
     const $element = $(element);
     const sinopsis = $element.find('div.sinopsis-box p').text();
     const type = $element.find('div.info-content div.info-field span.info-value').first().text();
     const content = {
-      type: type,
-      sinopsis: sinopsis,
+      type: type || 'unknown',
+      sinopsis: sinopsis || 'unknown',
     }
     extra.push(content);
   })
@@ -28,28 +28,51 @@ const animeContentHandler = async (id: string) =>{
 const lastAnimesAdded = async () =>{
   const res = await fetch(`${url}`);
   const body = await res.text();
-  const animes = [];
   const $ = cheerio.load(body);
-  $('.portada-box').each(async function (index, element) {
+  const promises = [];
+  $('.portada-box').each(function(index, element){
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
-    //const synopsis = $element.find('div #ainfo p').text();
-    //const type = $element.find('span.eps-num').text();
     const id = $element.find('h2.portada-title a').attr('href').split('/')[3];
     const poster = $element.find('a').children('img').attr('src');
-    //const extra = getAnimeVideo(id, undefined);
-    //const extra = await animeContentHandler(id)
-    const anime: IAnime[] = [{
+    promises.push(animeContentHandler(id).then(extra => ({
       title: title,
       id: id,
       poster: poster,
-      type: 'unknown',
-      synopsis: 'unknown'
-    }]
-    animes.push(anime);
+      type: extra[0] ? extra[0].type : 'unknown',
+      synopsis: extra[0] ? extra[0].sinopsis : 'unknown'
+    })))
   });
-  return animes;
+  const animes: IAnime[] = await Promise.all(promises)
+  console.log(animes)
+  return Array(animes);
 }
+
+//const lastAnimesAdded = async () =>{
+//  const res = await fetch(`${url}`);
+//  const body = await res.text();
+//  const animes = [];
+//  const $ = cheerio.load(body);
+//  $('.portada-box').each(async function (index, element) {
+//    const $element = $(element);
+//    const title = $element.find('h2.portada-title a').attr('title');
+//    //const synopsis = $element.find('div #ainfo p').text();
+//    //const type = $element.find('span.eps-num').text();
+//    const id = $element.find('h2.portada-title a').attr('href').split('/')[3];
+//    const poster = $element.find('a').children('img').attr('src');
+//    //const extra = getAnimeVideo(id, undefined);
+//    //const extra = await animeContentHandler(id)
+//    const anime: IAnime[] = [{
+//      title: title,
+//      id: id,
+//      poster: poster,
+//      type: 'unknown',
+//      synopsis: 'unknown'
+//    }]
+//    animes.push(anime);
+//  });
+//  return animes;
+//}
 
 const getAnimesListByLetter = async (letter: string, page: number) => {
   const res = await fetch(`${searchUrlLetter}${letter}/${page}`);

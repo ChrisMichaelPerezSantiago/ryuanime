@@ -14,7 +14,8 @@ const pagin = require('./paginator/index.js');
 export const actions = {
   GET_LATEST_DATA({commit}){
     A.get(API_URL_ENDPOINT.latest).then((res) =>{
-      const animes = res.data.animes.map((data) => data[0]);
+      const animes = res.data.animes;
+      console.log("\n⚠️ LATEST ANIMES (res): " , animes);
       commit('SET_LATEST_DATA' , animes);
       commit('IS_LOADING' , false);
     }).catch((err) =>{
