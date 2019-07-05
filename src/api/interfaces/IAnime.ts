@@ -4,4 +4,5 @@ export default interface IAnime {
   poster: string,
   type: string,
   synopsis: string,
+  state: string,
 }
