@@ -1,18 +1,223 @@
 import * as cheerio from 'cheerio';
 import * as puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
-import { url, searchUrl, searchUrlLetter } from './urls/index'
+import { url, searchUrl, searchUrlLetter, calenderUrl } from './urls/index'
 import IAnime from './interfaces/IAnime'
+import ICalender from './interfaces/ICalender'
 
 const axios = require('axios');
 
 
-const animeContentHandler = async (id: string) =>{
+const getAnimeCalender = async () => {
+  const res = await fetch(`${calenderUrl}`); //https://jkanime.net/horario/
+  const body = await res.text();
+  const promises = [];
+  var $ = cheerio.load(body);
+  $('table tr').eq(1).each((i, element) => {
+    const $element = $(element);
+    // eq(0) equal to monday
+    const monday = $element.find('tr td').eq(0).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(1) equal to Tuesday
+    const tuesday = $element.find('tr td').eq(1).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(2) equal to Wednesday
+    const wednesday = $element.find('tr td').eq(2).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(3) equal to thursday
+    const thursday = $element.find('tr td').eq(3).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(4) equal to Friday
+    const friday = $element.find('tr td').eq(4).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(5) equal to Saturday
+    const saturday = $element.find('tr td').eq(5).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+    // eq(6) equal to Saturday
+    const sunday = $element.find('tr td').eq(6).map((j, element) => {
+      const $element = $(element);
+      const content = []
+      const titles = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const title = $el.find('h3').text();
+        return title;
+      }).toArray();
+      const ids = $element.find('a').map((i, el) => {
+        const $el = $(el);
+        const id = $el.attr('href').split("/")[3];
+        return id;
+      }).toArray();
+      const posters = $element.find('a div#timg').map((i, el) => {
+        const $el = $(el);
+        const poster = $element.find('img').eq(i).attr('src');
+        return poster;
+      }).toArray();
+      content.push({
+        title: titles,
+        id: ids,
+        poster: posters
+      })
+      return content;
+    }).toArray();
+
+    promises.push({
+      monday: monday,
+      tuesday: tuesday,
+      wednesday: wednesday,
+      thursday: thursday,
+      friday: friday,
+      saturday: saturday,
+      sunday: sunday
+    });
+  });
+  const calender: ICalender[] = await Promise.all(promises);
+  return calender;
+}
+
+const animeContentHandler = async (id: string) => {
   const res = await fetch(`${url}/${id}`);
   const body = await res.text();
   const extra = [];
   const $ = cheerio.load(body);
-  $('div.serie-info').each(function(index , element){
+  $('div.serie-info').each(function (index, element) {
     const $element = $(element);
     const sinopsis = $element.find('div.sinopsis-box p').text();
     const type = $element.find('div.info-content div.info-field span.info-value').first().text();
@@ -21,19 +226,19 @@ const animeContentHandler = async (id: string) =>{
     const content = {
       type: `${type} / ${eps} Eps`,
       sinopsis: sinopsis,
-      state: state, 
+      state: state,
     }
     extra.push(content);
   })
   return await extra;
 }
 
-const lastAnimesAdded = async () =>{
+const lastAnimesAdded = async () => {
   const res = await fetch(`${url}`);
   const body = await res.text();
   const $ = cheerio.load(body);
   const promises = [];
-  $('.portada-box').each(function(index, element){
+  $('.portada-box').each(function (index, element) {
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
     const id = $element.find('h2.portada-title a').attr('href').split('/')[3];
@@ -83,7 +288,7 @@ const getAnimesListByLetter = async (letter: string, page: number) => {
   const body = await res.text();
   const promises = [];
   const $ = cheerio.load(body);
-  $('.portada-box').each(function(index, element){
+  $('.portada-box').each(function (index, element) {
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
     const synopsis = $element.find('div #ainfo p').text();
@@ -108,7 +313,7 @@ const searchAnime = async (query: any) => {
   const body = await res.text();
   const promises = [];
   const $ = cheerio.load(body);
-  $('.portada-box').each(function(index, element){
+  $('.portada-box').each(function (index, element) {
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
     const synopsis = $element.find('div #ainfo p').text();
@@ -122,7 +327,7 @@ const searchAnime = async (query: any) => {
       type: type,
       synopsis: synopsis,
       state: extra[0] ? extra[0].state : 'unknown'
-  
+
     })))
   });
   const animes: IAnime[] = await Promise.all(promises)
