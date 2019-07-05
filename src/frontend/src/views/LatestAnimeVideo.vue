@@ -43,7 +43,7 @@
       </div>
       <div class="flex flex-wrap" v-else>
         <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4">
-          <Video :Id="id" :Title="title" :Eps="eps" :Synopsis="synopsis" :ContentType="types.content"/>
+          <Video :Id="id" :Title="title" :Eps="eps" :Synopsis="synopsis" :ContentType="types.content" :State="state"/>
         </div>
 
          <!--  aside -->
@@ -62,10 +62,9 @@
                   </option>
                 </select>
               </span>
-            
+
             </div>
 
-            <h1>{{eps}}</h1>
             <div class="max-w-sm rounded shadow-2xl border-indigo-900 overflow-hidden shadow-lg">
               <img class="w-full" :src="poster" :alt="title">
             </div>
@@ -99,9 +98,10 @@
         title: this.$route.params.title,
         synopsis: this.$route.params.synopsis,
         poster: this.$route.params.poster,
+        state: this.$route.params.state,
         types:{
           totalEps: this.$route.params.type.replace(/[^0-9]/g,'') || 25, //,
-          content: this.$route.params.type.split('/')[0] || ''
+          content: this.$route.params.type.split('/')[0].trim() || ''
         } ,
         eps: null,
       }
@@ -110,12 +110,18 @@
       ...mapState(['latest' , 'isLoading']),
     },
     created(){
-      store.dispatch('GET_LATEST_DATA')
+      if(this.types.content.includes('Pelicula')){
+        alert('is a movie');
+        this.types.totalEps = 1;
+      }
     },
     watch:{
       eps: function(){
         store.dispatch('GET_LATEST_DATA')
       }
+    },
+    mounted(){
+      store.dispatch('GET_LATEST_DATA')
     }
   };
 </script>
