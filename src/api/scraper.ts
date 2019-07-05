@@ -16,9 +16,12 @@ const animeContentHandler = async (id: string) =>{
     const $element = $(element);
     const sinopsis = $element.find('div.sinopsis-box p').text();
     const type = $element.find('div.info-content div.info-field span.info-value').first().text();
+    const state = $element.find('div.info-content div.info-field span.info-value b').last().text();
+    const eps = $element.find('div.info-content div.info-field span.info-value').eq(2).text();
     const content = {
-      type: type || 'unknown',
-      sinopsis: sinopsis || 'unknown',
+      type: `${type} / ${eps} Eps`,
+      sinopsis: sinopsis,
+      state: state, 
     }
     extra.push(content);
   })
@@ -40,12 +43,12 @@ const lastAnimesAdded = async () =>{
       id: id,
       poster: poster,
       type: extra[0] ? extra[0].type : 'unknown',
-      synopsis: extra[0] ? extra[0].sinopsis : 'unknown'
+      synopsis: extra[0] ? extra[0].sinopsis : 'unknown',
+      state: extra[0] ? extra[0].state : 'unknown'
     })))
   });
   const animes: IAnime[] = await Promise.all(promises)
-  console.log(animes)
-  return Array(animes);
+  return animes;
 }
 
 //const lastAnimesAdded = async () =>{
@@ -74,51 +77,55 @@ const lastAnimesAdded = async () =>{
 //  return animes;
 //}
 
+
 const getAnimesListByLetter = async (letter: string, page: number) => {
   const res = await fetch(`${searchUrlLetter}${letter}/${page}`);
   const body = await res.text();
-  const animes = [];
+  const promises = [];
   const $ = cheerio.load(body);
-  $('.portada-box').each(function (index, element) {
+  $('.portada-box').each(function(index, element){
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
     const synopsis = $element.find('div #ainfo p').text();
     const type = $element.find('span.eps-num').text();
     const id = $element.find('a.let-link').attr('href').split('/')[3];
     const poster = $element.find('a').children('img').attr('src');
-    const anime: IAnime[] = [{
+    promises.push(animeContentHandler(id).then(extra => ({
       title: title,
       id: id,
       poster: poster,
       type: type,
       synopsis: synopsis,
-    }]
-    animes.push(anime);
+      state: extra[0] ? extra[0].state : 'unknown'
+    })))
   });
+  const animes: IAnime[] = await Promise.all(promises)
   return animes;
 }
 
 const searchAnime = async (query: any) => {
   const res = await fetch(`${searchUrl}${query}/1/`);
   const body = await res.text();
-  const animes = [];
+  const promises = [];
   const $ = cheerio.load(body);
-  $('.portada-box').each(async function(index, element){
+  $('.portada-box').each(function(index, element){
     const $element = $(element);
     const title = $element.find('h2.portada-title a').attr('title');
     const synopsis = $element.find('div #ainfo p').text();
     const type = $element.find('span.eps-num').text();
     const id = $element.find('a.let-link').attr('href').split('/')[3];
     const poster = $element.find('a').children('img').attr('src');
-    const anime: IAnime[] = [{
+    promises.push(animeContentHandler(id).then(extra => ({
       title: title,
       id: id,
       poster: poster,
       type: type,
       synopsis: synopsis,
-    }]
-    animes.push(anime);
+      state: extra[0] ? extra[0].state : 'unknown'
+  
+    })))
   });
+  const animes: IAnime[] = await Promise.all(promises)
   return animes;
 }
 
