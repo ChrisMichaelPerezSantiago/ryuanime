@@ -171,7 +171,7 @@ const getAnimeCalender = async () => {
       })
       return content;
     }).toArray();
-    // eq(6) equal to Saturday
+    // eq(6) equal to Sunday
     const sunday = $element.find('tr td').eq(6).map((j, element) => {
       const $element = $(element);
       const content = []
