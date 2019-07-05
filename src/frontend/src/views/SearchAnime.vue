@@ -61,7 +61,6 @@
   import LatestAnime from '../components/LatestAnime';
   import {mapState , mapGetters} from 'vuex';
   import store from '../store/store';
-
   export default{
     name: "SearchAnime",
     components:{

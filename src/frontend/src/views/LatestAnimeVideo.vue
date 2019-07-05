@@ -47,7 +47,7 @@
         </div>
 
          <!--  aside -->
-        <aside class="w-full md:max-w-xs xl:max-w-full xl:w-1/4 md:pl-5 mt-5 md:mt-4">
+        <aside class="w-full md:max-w-xs xl:max-w-full xl:w-1/4 md:pl-16 mt-5 md:mt-4">
           <!-- up next -->
           <div class="w-full">
             <div class="flex w-full items-center justify-between mb-3">
@@ -85,7 +85,6 @@
   import Video from '../components/Video'
   import {mapState , mapGetters} from 'vuex'
   import store from '../store/store'
-
   export default {
     name: "home",
     components:{
