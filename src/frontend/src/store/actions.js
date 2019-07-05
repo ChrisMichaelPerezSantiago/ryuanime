@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_API_URL= 'https://ryuanime-api.chrismichael.now.sh/api/v1/' || 'http://localhost:3000/api/v1/';
+const BASE_API_URL=  'http://localhost:3000/api/v1/'; // || 'https://ryuanime-api.chrismichael.now.sh/api/v1/'
 const API_URL_ENDPOINT = {
   latest: 'latest',
   video: 'anime',
@@ -36,7 +36,7 @@ export const actions = {
   GET_ANIME_ALPHA({commit} , info){
     A.get(`${API_URL_ENDPOINT.letter}` + "/" + info.letter + "/" + info.page)
       .then((res) =>{
-        const animes = res.data.animes.map((data) => data[0]);
+        const animes = res.data.animes;
         console.log("\n⚠️ ANIME BY LETTER (res): " , animes);
         const dataPaginated = pagin.paginator(animes , info.page , 10);
         commit('SET_ANIME_ALPHA' , dataPaginated);
@@ -48,7 +48,7 @@ export const actions = {
   GET_ANIME_SEARCH({commit} , query){
     A.get(`${API_URL_ENDPOINT.search}` + '/' + `${query}`)
       .then((res) =>{
-        const animes = res.data.animes.map((data) => data[0]);
+        const animes = res.data.animes;
         console.log("\n⚠️ ANIME SEARCHED  (res): " , animes);
         commit('SET_ANIME_SEARCH' , animes);
         commit('IS_LOADING' , false);
