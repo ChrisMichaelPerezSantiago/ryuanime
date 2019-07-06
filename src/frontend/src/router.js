@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import LatestAnimeVideo from "./views/LatestAnimeVideo"
 import AnimesByLetter from "./views/AnimesByLetter"
+import AnimesByGender from "./views/AnimesByGender"
 import SearchAnime from "./views/SearchAnime"
 import NotFound from "./views/NotFound"
 
@@ -27,6 +28,11 @@ export default new Router({
       path: "/AnimesByLetter",
       name: "AnimesByLetter",
       component: AnimesByLetter
+    },
+    {
+      path: "/AnimesByGender",
+      name: "AnimesByGender",
+      component: AnimesByGender
     },
     {
       path: "/SearchAnime",
