@@ -186,6 +186,9 @@ npm run electron:serve
 | 7 days a week |
 
 ```json
+// 20190706125207
+// http://localhost:3000/api/v1/calender
+
 {
   "calender": [
     {
