@@ -8,8 +8,8 @@ import ICalender from './interfaces/ICalender'
 const axios = require('axios');
 
 
-const getAnimesByGender = async(gender: string) =>{
-  const res = await fetch(`${genderUrl}${gender}`);
+const getAnimesByGender = async(gender: string , page: number) =>{
+  const res = await fetch(`${genderUrl}${gender}/${page}`);
   const body = await res.text();
   const promises = [];
   var $ = cheerio.load(body); 
