@@ -441,4 +441,5 @@ export {
   getAnimeVideo,
   getAnimesListByLetter,
   lastAnimesAdded,
+  getAnimeCalender
 };
