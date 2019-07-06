@@ -177,6 +177,49 @@ npm run electron:serve
 }
 ```
 
+### GET /calender
+- *It will return the content that will be transmitted throughout the week*
+
+
+| calender      |
+| -----------   |
+| 7 days a week |
+
+```json
+{
+  "calender": [
+    {
+      "monday": [
+        {
+          "title": [
+            "Dororo",
+            "NAMU AMIDA BUTSU!: RENDAI UTENA",
+            "YATOGAME-CHAN KANSATSU NIKKI",
+            "KING OF PRISM: SHINY SEVEN STARS",
+            "ROBIHACHI"
+          ],
+          "id": [
+            "dororo",
+            "namu-amida-butsu-rendai-utena",
+            "yatogame-chan-kansatsu-nikki",
+            "king-of-prism-shiny-seven-stars",
+            "robihachi"
+          ],
+          "poster": [
+            "https://cdn.jkanime.net/assets/images/animes/image/dororo.jpg",
+            "https://cdn.jkanime.net/assets/images/animes/image/namu-amida-butsu-rendai-utena.jpg",
+            "https://cdn.jkanime.net/assets/images/animes/image/yatogame-chan-kansatsu-nikki.jpg",
+            "https://cdn.jkanime.net/assets/images/animes/image/king-of-prism-shiny-seven-stars.jpg",
+            "https://cdn.jkanime.net/assets/images/animes/image/robihachi.jpg"
+          ]
+        }
+      ],
+      .......
+    }
+  ]
+}
+```
+
 ## Middleware
 *As the project grows, more functions will be implemented soon.*
 
