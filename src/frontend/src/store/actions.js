@@ -5,7 +5,8 @@ const API_URL_ENDPOINT = {
   latest: 'latest',
   video: 'anime',
   letter: 'letter',
-  search: 'search'
+  search: 'search',
+  genders: 'genders'
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
@@ -55,5 +56,18 @@ export const actions = {
       }).catch((err) =>{
         console.log(err);
       });
-  }
+  },
+  GET_ANIME_GENDER({commit} , info){
+    A.get(`${API_URL_ENDPOINT.genders}` + "/" + info.gender + "/" + info.page)
+      .then((res) =>{
+        console.log("res: " , res);
+        const animes = res.data.animes;
+        console.log("\n⚠️ ANIME BY GENDER (res): " , animes);
+        const dataPaginated = pagin.paginator(animes , info.page , 10);
+        commit('SET_ANIME_GENDER' , dataPaginated);
+        commit('IS_LOADING' , false);
+      }).then((err) =>{
+        console.log(err);
+    });
+  },
 };

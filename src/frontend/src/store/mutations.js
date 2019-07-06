@@ -17,6 +17,9 @@ export const mutations = {
   SET_ANIME_ALPHA(state , payload){
     state.animesByAlpha = payload;
   },
+  SET_ANIME_GENDER(state , payload){
+    state.animesByGender = payload;
+  },
   SET_ANIME_SEARCH(state , payload){
     state.searchAnimeList = payload;
   },
