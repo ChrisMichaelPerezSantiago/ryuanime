@@ -53,6 +53,15 @@ router.get('/latest', (req: express.Request, res: express.Response) => {
     });
 });
 
+router.get('/calender' , (req: express.Request , res: express.Response) =>{
+  scraper.getAnimeCalender()
+    .then(calender =>{
+      res.status(200).json({
+        calender
+      })
+    });
+});
+
 
 
 
