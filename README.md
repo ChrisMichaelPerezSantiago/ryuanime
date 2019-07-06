@@ -228,7 +228,7 @@ npm run electron:serve
 
 | genders           |                      |                    |                   |                     |
 | ------------------|----------------------|--------------------|-------------------|---------------------|
-| <li>accion</li><li>artes-marciales</li><li>autos</li><li>aventura</li><li>colegial</li><li>comedia</li><li>cosas-de-la-vida</li><li>dementia</li><li>demonios</li><li>deportes</li>|<li>drama</li><li>ecchi</li><li>fantasia</li><li>harem</li><li>historico</li><li>josei</li><li>juegos</li><li>magia</li><li>mecha</li><li>militar</li>|<li>misterio</li><li>musica</li><li>nios</li><li>parodia</li><li>policial</li><li>psicologico</li><li>romance</li><li>samurai</li><li>sci-fi</li><li>seinen</li>|<li>shoujo</li><li>shoujo-ai</li><li>shounen</li><li>shounen-ai</li><li>sobrenatural</li><li>space</li><li>super-poderes</li><li>terror</li><li>thriller</li><li>vampiros</li>|<li>yaoi</li><li>yuri</li>|
+| <li>accion</li><li>artes-marciales</li><li>autos</li><li>aventura</li><li>colegial</li><li>comedia</li><li>cosas-de-la-vida</li><li>dementia</li><li>demonios</li><li>deportes</li>|<li>drama</li><li>ecchi</li><li>fantasia</li><li>harem</li><li>historico</li><li>josei</li><li>juegos</li><li>magia</li><li>mecha</li><li>militar</li>|<li>misterio</li><li>musica</li><li>nios (niño)</li><li>parodia</li><li>policial</li><li>psicologico</li><li>romance</li><li>samurai</li><li>sci-fi</li><li>seinen</li>|<li>shoujo</li><li>shoujo-ai</li><li>shounen</li><li>shounen-ai</li><li>sobrenatural</li><li>space</li><li>super-poderes</li><li>terror</li><li>thriller</li><li>vampiros</li>|<li>yaoi</li><li>yuri</li>|
 
 
 ```json
