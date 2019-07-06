@@ -63,6 +63,16 @@ router.get('/calender' , (req: express.Request , res: express.Response) =>{
 });
 
 
+router.get('/genders/:gender' , (req: express.Request , res: express.Response) =>{
+  let gender = req.params.gender.toLowerCase();
+  scraper.getAnimesByGender(gender)
+    .then(animes =>{
+      res.status(200).json({
+        animes
+      })
+    })
+})
+
 
 
 export default router;
