@@ -63,9 +63,10 @@ router.get('/calender' , (req: express.Request , res: express.Response) =>{
 });
 
 
-router.get('/genders/:gender' , (req: express.Request , res: express.Response) =>{
-  let gender = req.params.gender.toLowerCase();
-  scraper.getAnimesByGender(gender)
+router.get('/genders/:gender/:page' , (req: express.Request , res: express.Response) =>{
+  let gender: string = req.params.gender.toLowerCase();
+  let page: number = req.params.page;
+  scraper.getAnimesByGender(gender , page)
     .then(animes =>{
       res.status(200).json({
         animes
