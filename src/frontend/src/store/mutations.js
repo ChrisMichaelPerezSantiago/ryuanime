@@ -23,6 +23,9 @@ export const mutations = {
   SET_ANIME_SEARCH(state , payload){
     state.searchAnimeList = payload;
   },
+  SET_GET_SCHEDULE(state , payload){
+    state.schedule = payload;
+  },
   IS_LOADING(state , payload){
     state.isLoading = payload;
   }

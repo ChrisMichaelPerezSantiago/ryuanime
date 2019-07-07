@@ -6,7 +6,8 @@ const API_URL_ENDPOINT = {
   video: 'anime',
   letter: 'letter',
   search: 'search',
-  genders: 'genders'
+  genders: 'genders',
+  calender: 'calender'
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
@@ -65,6 +66,16 @@ export const actions = {
         console.log("\n⚠️ ANIME BY GENDER (res): " , animes);
         const dataPaginated = pagin.paginator(animes , info.page , 10);
         commit('SET_ANIME_GENDER' , dataPaginated);
+        commit('IS_LOADING' , false);
+      }).then((err) =>{
+        console.log(err);
+    });
+  },
+  GET_SCHEDULE({commit}){
+    A.get(`${API_URL_ENDPOINT.calender}`)
+      .then((res) =>{
+        const calender = res.data.calender;
+        commit('SET_GET_SCHEDULE' , calender);
         commit('IS_LOADING' , false);
       }).then((err) =>{
         console.log(err);
