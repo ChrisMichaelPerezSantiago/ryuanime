@@ -29,6 +29,9 @@ export const mutations = {
   SET_MOVIES(state , payload){
     state.movies = payload;
   },
+  SET_OVAS(state , payload){
+    state.ovas = payload;
+  },
   IS_LOADING(state , payload){
     state.isLoading = payload;
   }

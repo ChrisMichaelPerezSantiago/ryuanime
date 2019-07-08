@@ -8,7 +8,8 @@ const API_URL_ENDPOINT = {
   search: 'search',
   genders: 'genders',
   calender: 'calender',
-  movies: 'movies'
+  movies: 'movies',
+  ovas: 'ovas',
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
@@ -18,7 +19,7 @@ export const actions = {
   GET_LATEST_DATA({commit}){
     A.get(API_URL_ENDPOINT.latest).then((res) =>{
       const animes = res.data.animes;
-      console.log("\n⚠️ LATEST ANIMES (res): " , animes);
+      //console.log("\n⚠️ LATEST ANIMES (res): " , animes);
       commit('SET_LATEST_DATA' , animes);
       commit('IS_LOADING' , false);
     }).catch((err) =>{
@@ -40,7 +41,7 @@ export const actions = {
     A.get(`${API_URL_ENDPOINT.letter}` + "/" + info.letter + "/" + info.page)
       .then((res) =>{
         const animes = res.data.animes;
-        console.log("\n⚠️ ANIME BY LETTER (res): " , animes);
+        //console.log("\n⚠️ ANIME BY LETTER (res): " , animes);
         const dataPaginated = pagin.paginator(animes , info.page , 10);
         commit('SET_ANIME_ALPHA' , dataPaginated);
         commit('IS_LOADING' , false);
@@ -52,7 +53,7 @@ export const actions = {
     A.get(`${API_URL_ENDPOINT.search}` + '/' + `${query}`)
       .then((res) =>{
         const animes = res.data.animes;
-        console.log("\n⚠️ ANIME SEARCHED  (res): " , animes);
+        //console.log("\n⚠️ ANIME SEARCHED  (res): " , animes);
         commit('SET_ANIME_SEARCH' , animes);
         commit('IS_LOADING' , false);
       }).catch((err) =>{
@@ -62,9 +63,9 @@ export const actions = {
   GET_ANIME_GENDER({commit} , info){
     A.get(`${API_URL_ENDPOINT.genders}` + "/" + info.gender + "/" + info.page)
       .then((res) =>{
-        console.log("res: " , res);
+        //console.log("res: " , res);
         const animes = res.data.animes;
-        console.log("\n⚠️ ANIME BY GENDER (res): " , animes);
+        //console.log("\n⚠️ ANIME BY GENDER (res): " , animes);
         const dataPaginated = pagin.paginator(animes , info.page , 10);
         commit('SET_ANIME_GENDER' , dataPaginated);
         commit('IS_LOADING' , false);
@@ -88,6 +89,17 @@ export const actions = {
         const movies = res.data.movies;
         const dataPaginated = pagin.paginator(movies , page , 10);
         commit('SET_MOVIES' , dataPaginated);
+        commit('IS_LOADING' , false);
+      }).catch((err) =>{
+        console.log(err);
+      });
+  },
+  GET_ANIME_OVAS({commit} , page){
+    A.get(`${API_URL_ENDPOINT.ovas}/${page}`)
+      .then((res) =>{
+        const ovas = res.data.ovas;
+        const dataPaginated = pagin.paginator(ovas , page , 10);
+        commit('SET_OVAS' , dataPaginated);
         commit('IS_LOADING' , false);
       }).catch((err) =>{
         console.log(err);

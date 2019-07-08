@@ -5,6 +5,7 @@ export const state = {
   animesByGender: [],
   searchAnimeList: [],
   movies: [],
+  ovas: [],
   schedule: [],
   isLoading: true
 };
