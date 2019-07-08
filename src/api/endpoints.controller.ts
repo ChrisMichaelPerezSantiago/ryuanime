@@ -84,6 +84,17 @@ router.get('/movies/:page' , (req: express.Request , res: express.Response) =>{
     });
 });
 
+router.get('/ovas/:page' , (req: express.Request , res: express.Response) =>{
+  let page: number = req.params.page;
+  scraper.getAnimeOvas(page)
+    .then(ovas =>{
+      res.status(200).json({
+        ovas
+      });
+    });
+});
+
+
 
 
 export default router;
