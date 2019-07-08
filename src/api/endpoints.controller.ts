@@ -70,9 +70,19 @@ router.get('/genders/:gender/:page' , (req: express.Request , res: express.Respo
     .then(animes =>{
       res.status(200).json({
         animes
-      })
-    })
-})
+      });
+    });
+});
+
+router.get('/movies/:page' , (req: express.Request , res: express.Response) =>{
+  let page: number = req.params.page;
+  scraper.getAnimeMovies(page)
+    .then(movies =>{
+      res.status(200).json({
+        movies
+      });
+    });
+});
 
 
 
