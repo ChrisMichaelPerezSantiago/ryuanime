@@ -20,6 +20,18 @@ body{
  ****************************************************/ 
 .paginator-container{
   display: flex !important;
+  margin: 20px;
+}
+ul{
+  list-style-type:none;
+  display:flex;
+  justify-content: center;
+
+}
+ul li{
+  display: list-item;
+  padding: 5px 10px;
+  margin: 0 3px;
 }
 .paginator-container a{
   color: #3c366b !important;
