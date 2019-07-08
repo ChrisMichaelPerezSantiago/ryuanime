@@ -5,6 +5,7 @@ import LatestAnimeVideo from "./views/LatestAnimeVideo";
 import AnimesByLetter from "./views/AnimesByLetter";
 import AnimesByGender from "./views/AnimesByGender";
 import Movies from './views/Movies';
+import Ovas from './views/Ovas';
 import SearchAnime from "./views/SearchAnime";
 import NotFound from "./views/NotFound";
 
@@ -39,6 +40,11 @@ export default new Router({
       path: "/Movies",
       name: "Movies",
       component: Movies
+    },
+    {
+      path: "/Ovas",
+      name: "Ovas",
+      component: Ovas
     },
     {
       path: "/SearchAnime",
