@@ -250,6 +250,32 @@ npm run electron:serve
 }
 ```
 
+### GET /movies/[page]
+- *Returns a list of `10 titles` per N pages*
+
+| movies      | page            |
+| ----------- | --------------- |
+| list of last titles added.| number of pages unknown |
+
+```json
+/ 20190707195746
+// http://localhost:3000/api/v1/movies/1
+
+{
+  "movies": [
+    {
+      "title": ".hack//G.U. Trilogy",
+      "id": "hack-g-u-trilogy",
+      "poster": "https://cdn.jkanime.net/assets/images/animes/image/hack-g-u-trilogy.jpg",
+      "type": "Pelicula / 1 Eps",
+      "synopsis": "La trama sigue centrándose en Haseo, quien ya se dio cuenta de que \"The World R:2\" no es un juego común y corriente, ya que el fenómeno del \"AIDA\" afecta a los jugadores en la vida real de forma peligrosa. Para salvar a su amiga Shino, Haseo tratara de encontrar alguna respuesta pero solo se topara…",
+      "state": "Concluido"
+    },
+    .......
+  ]
+}
+```
+
 
 ## Middleware
 *As the project grows, more functions will be implemented soon.*
