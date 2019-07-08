@@ -277,6 +277,33 @@ npm run electron:serve
 ```
 
 
+### GET /ovas/[page]
+- *Returns a list of `10 titles` per N pages*
+
+| movies      | page            |
+| ----------- | --------------- |
+| list of last titles added.| number of pages unknown |
+
+```json
+// 20190707214521
+// http://localhost:3000/api/v1/ovas/1
+
+{
+  "ovas": [
+    {
+      "title": "[Locodol] Yatte Mita.: Nagarekawa, Annai Shite Mita.",
+      "id": "futsuu-no-joshikousei-ga-locodol-yatte-mita-nagarekawa-annai-shite-mita",
+      "poster": "https://cdn.jkanime.net/assets/images/animes/image/futsuu-no-joshikousei-ga-locodol-yatte-mita-nagarekawa-annai-shite-mita.jpg",
+      "type": "OVA / 2 Eps",
+      "synopsis": "Episodio especial incluido en el Volumen 1 de Blu-ray/DVD. ",
+      "state": "Concluido"
+    },
+    .......
+  ]
+}
+```
+
+
 ## Middleware
 *As the project grows, more functions will be implemented soon.*
 
