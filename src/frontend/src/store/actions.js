@@ -7,7 +7,8 @@ const API_URL_ENDPOINT = {
   letter: 'letter',
   search: 'search',
   genders: 'genders',
-  calender: 'calender'
+  calender: 'calender',
+  movies: 'movies'
 }
 
 const A = axios.create({ baseURL: String(BASE_API_URL) });
@@ -80,5 +81,16 @@ export const actions = {
       }).then((err) =>{
         console.log(err);
     });
+  },
+  GET_ANIME_MOVIES({commit} , page){
+    A.get(`${API_URL_ENDPOINT.movies}/${page}`)
+      .then((res) =>{
+        const movies = res.data.movies;
+        const dataPaginated = pagin.paginator(movies , page , 10);
+        commit('SET_MOVIES' , dataPaginated);
+        commit('IS_LOADING' , false);
+      }).catch((err) =>{
+        console.log(err);
+      });
   },
 };

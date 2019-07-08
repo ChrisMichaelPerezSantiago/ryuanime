@@ -4,6 +4,7 @@ export const state = {
   animesByAlpha: [],
   animesByGender: [],
   searchAnimeList: [],
+  movies: [],
   schedule: [],
   isLoading: true
 };

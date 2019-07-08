@@ -26,6 +26,9 @@ export const mutations = {
   SET_GET_SCHEDULE(state , payload){
     state.schedule = payload;
   },
+  SET_MOVIES(state , payload){
+    state.movies = payload;
+  },
   IS_LOADING(state , payload){
     state.isLoading = payload;
   }
