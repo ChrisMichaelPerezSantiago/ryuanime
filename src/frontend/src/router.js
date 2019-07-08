@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import LatestAnimeVideo from "./views/LatestAnimeVideo";
 import AnimesByLetter from "./views/AnimesByLetter";
 import AnimesByGender from "./views/AnimesByGender";
+import Movies from './views/Movies';
 import SearchAnime from "./views/SearchAnime";
 import NotFound from "./views/NotFound";
 
@@ -33,6 +34,11 @@ export default new Router({
       path: "/AnimesByGender",
       name: "AnimesByGender",
       component: AnimesByGender
+    },
+    {
+      path: "/Movies",
+      name: "Movies",
+      component: Movies
     },
     {
       path: "/SearchAnime",
