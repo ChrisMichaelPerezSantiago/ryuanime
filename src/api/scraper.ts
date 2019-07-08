@@ -1,12 +1,36 @@
 import * as cheerio from 'cheerio';
 import * as puppeteer from 'puppeteer';
 import fetch from 'node-fetch';
-import { url, searchUrl, searchUrlLetter, calenderUrl , genderUrl ,moviesUrl } from './urls/index'
-import IAnime from './interfaces/IAnime'
-import ICalender from './interfaces/ICalender'
+import { url, searchUrl, searchUrlLetter, calenderUrl , genderUrl , moviesUrl , ovasUrl } from './urls/index'
+import IAnime from './interfaces/IAnime';
+import ICalender from './interfaces/ICalender';
 
 const axios = require('axios');
 
+const getAnimeOvas = async(page: number) =>{
+  const res = await fetch(`${ovasUrl}/${page}`);
+  const body = await res.text();
+  const promises = [];
+  var $ = cheerio.load(body); 
+  $('.portada-box').each(function (index, element) {
+    const $element = $(element);
+    const title = $element.find('h2.portada-title a').attr('title');
+    const synopsis = $element.find('div #ainfo p').text();
+    const type = $element.find('span.eps-num').text();
+    const id = $element.find('a.let-link').attr('href').split('/')[3];
+    const poster = $element.find('a').children('img').attr('src');
+    promises.push(animeContentHandler(id).then(extra => ({
+      title: title,
+      id: id,
+      poster: poster,
+      type: type,
+      synopsis: synopsis,
+      state: extra[0] ? extra[0].state : 'unknown'
+    })))
+  });
+  const animes: IAnime[] = await Promise.all(promises)
+  return animes;
+}
 
 const getAnimeMovies = async(page: number) =>{
   const res = await fetch(`${moviesUrl}/${page}`);
@@ -493,6 +517,7 @@ export {
   lastAnimesAdded,
   getAnimeCalender,
   getAnimesByGender,
-  getAnimeMovies
+  getAnimeMovies,
+  getAnimeOvas
 };
 
