@@ -10,7 +10,9 @@
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "background.js",
   "dependencies": {
@@ -25,7 +27,8 @@
     "vue-select": "^3.1.0",
     "vuejs-paginate": "^2.1.0",
     "vuex": "^3.0.1",
-    "vuex-persistedstate": "^2.5.4"
+    "vuex-persistedstate": "^2.5.4",
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -62,5 +65,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "snyk": true
 }
