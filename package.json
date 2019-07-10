@@ -7,7 +7,6 @@
     "start": "nodemon --watch 'src/*.ts' --exec ts-node-dev src/index.ts",
     "lint": "eslint --fix src",
     "audit": "snyk test",
-    "test": "mocha -w",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
@@ -42,6 +41,7 @@
     "node-fetch": "^2.6.0",
     "puppeteer": "^1.18.0",
     "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.2",
     "uninstall": "0.0.0"
   },
