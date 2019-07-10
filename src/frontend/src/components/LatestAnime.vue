@@ -13,7 +13,7 @@
               <i class="fas fa-headphones"></i>
               Watch
             </router-link>
-            <button class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-gray-600">Message</button>
+            <!--<button class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-gray-600">Message</button> -->
           </div>
 				</div>
       </div>
