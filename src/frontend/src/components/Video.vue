@@ -83,6 +83,16 @@
         document.getElementById('video').load();
       }
     },
+    mounted(){
+      if(this.videos.video){
+        const vuex = JSON.parse(localStorage.getItem('vuex'));
+        delete vuex.videos;
+        localStorage.setItem("vuex", JSON.stringify(vuex));
+      }
+    },
+    beforeDestroy(){
+      localStorage.removeItem('vuex');
+    }
   };
 </script>
 
