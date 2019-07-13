@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_API_URL = 'https://ryuanime-api.chrismichael.now.sh/api/v1/'
+const BASE_API_URL = 'http://localhost:3000/api/v1/';       //'https://ryuanime-api.chrismichael.now.sh/api/v1/'
 const API_URL_ENDPOINT = {
   latest: 'latest',
   video: 'anime',
