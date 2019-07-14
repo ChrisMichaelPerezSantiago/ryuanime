@@ -320,9 +320,10 @@ npm run electron:serve
 
 - **Deployment of the node/express API** - Deployment of the API for official use. So we do not have to use localhost to handle the endpoints in production.
 
-  - **Ryanime API:** https://ryuanime-api.chrismichael.now.sh/
+  - **Ryuanime API:** https://ryuanime-api.chrismichael.now.sh/
 
 - **Deployment of the ryuanime web site** - Deployment for official use.
+  - **Ryuanime App:** https://ryuanime.chrismichael.now.sh/
 
 ## Author
 
