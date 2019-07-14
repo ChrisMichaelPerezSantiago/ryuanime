@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto" id="cards">
     <div class="border m-6 rounded-lg  bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
       <div class="sm:flex sm:items-center px-6 py-4">
         <img class="block h-16 sm:h-24 rounded-lg mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" :src="anime.poster" alt="">
@@ -32,3 +32,4 @@
     }
   };
 </script>
+
