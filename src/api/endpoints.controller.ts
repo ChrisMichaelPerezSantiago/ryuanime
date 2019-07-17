@@ -1,4 +1,4 @@
-import * as scraper from './scraper';
+import * as scraper from './scraper/scraper';
 import * as express from 'express';
 const router = express.Router();
 
