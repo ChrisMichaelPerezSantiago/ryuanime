@@ -84,7 +84,7 @@
       }
     },
     created(){
-      if(Array(this.videos.video)){
+      if(Array.isArray(this.videos) && this.videos.length > 0){
         const vuex = JSON.parse(localStorage.getItem('vuex'));
         delete vuex.videos;
         localStorage.setItem("vuex", JSON.stringify(vuex));
