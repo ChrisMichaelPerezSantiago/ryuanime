@@ -5,7 +5,7 @@ import store from "./store/store";
 
 
 import vSuggest from 'v-suggest';
-import Paginate from 'vuejs-paginate'
+import Paginate from 'vuejs-paginate';
 
 import "@/assets/css/tailwind.css";
 import "@/assets/css/main.css";
