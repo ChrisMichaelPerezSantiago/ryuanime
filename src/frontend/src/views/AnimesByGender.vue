@@ -34,6 +34,7 @@
             </option>
           </select>
 
+          
           <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime" class="block flex items-center hover:text-gray-700 mr-5">
             <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
               <title>GitHub</title>
@@ -47,6 +48,8 @@
 
     <!-- content inside -->
     <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
+      <DropDownSection/> <!-- [TEMPORARY SOLUTION] navabr for phones -->
+
       <div v-if="isLoading">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
@@ -80,6 +83,7 @@
 <script>
   import Footer from "./Footer"
   import LatestAnime from '../components/LatestAnime'
+  import DropDownSection from '../views/DropDownSection'
   import {mapState , mapGetters} from 'vuex'
   import store from '../store/store'
 
@@ -87,7 +91,8 @@
     name: "AnimesByLetter",
     components:{
       LatestAnime,
-      Footer
+      Footer,
+      DropDownSection
     },
     data(){
       return{
