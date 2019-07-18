@@ -12,9 +12,6 @@
 
 <script>
   export default {
-    components: {
-      Multiselect
-    },
     data(){
       return{
         to: [],
