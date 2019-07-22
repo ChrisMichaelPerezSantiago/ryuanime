@@ -48,7 +48,7 @@
 
     <!-- content inside -->
     <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
-      <DropDownSection/> <!-- [TEMPORARY SOLUTION] navabr for phones -->
+      <DropDownSection class="ddSection"/> <!-- [TEMPORARY SOLUTION] navabr for phones -->
 
       <div v-if="isLoading">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
