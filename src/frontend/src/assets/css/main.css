@@ -30,7 +30,7 @@ ul{
 }
 ul li{
   display: list-item;
-  padding: 5px 10px;
+  padding: 5px 5px;
   margin: 0 3px;
 }
 .paginator-container a{
