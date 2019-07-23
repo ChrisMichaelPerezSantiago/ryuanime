@@ -68,7 +68,10 @@
       }
     },
     computed:{
-      ...mapState(['videos' , 'isLoading'])
+      ...mapState({
+        videos: 'videos' , 
+        isLoading:'isLoading'
+      })
     },
     watch:{
       "Eps": function(value){
@@ -91,7 +94,8 @@
       }
     },
     beforeDestroy(){
-      localStorage.removeItem('vuex');
+      //localStorage.removeItem('vuex');
+      this.videos.video = null;
     }
   };
 </script>
