@@ -9,7 +9,7 @@
           <video 
             id="video"
             controls
-          ><source :src="videos.video" type="video/mp4"></video>
+          ><source :src="this.videos.video" type="video/mp4"></video>
         </div>
         <!-- video info -->
         <div class="flex flex-wrap items-end">
