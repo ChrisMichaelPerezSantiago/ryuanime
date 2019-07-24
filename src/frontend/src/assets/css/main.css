@@ -198,8 +198,18 @@ ul li{
       background: rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
-      height: auto;
+      height: 100% !important;
       box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);
+     
+      background: url("../img/scaredDream.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      height: 275px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+
     }
   }
   .card .movie_image {
@@ -214,9 +224,8 @@ ul li{
       display: flex;
       flex-basis: auto;
       margin: 0 auto;
-      height: auto;
-      padding: 10px 0;
-      margin-bottom: 25px;
+      height: 0;
+      margin-bottom: 0px;
       overflow: hidden;
     }
   }
