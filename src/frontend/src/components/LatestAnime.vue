@@ -1,35 +1,44 @@
 <template>
-  <div class="container mx-auto" id="cards">
-    <div class="border m-6 rounded-lg  bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
-      <div class="sm:flex sm:items-center px-6 py-4">
-        <img class="block h-16 sm:h-24 rounded-lg mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" :src="anime.poster" alt="">
-        <div class="text-center sm:text-left sm:flex-grow">
-          <div class="mb-4">
-            <p class="text-xl leading-tight">{{anime.title}}</p>
-            <p class="text-sm leading-tight text-grey-dark">    </p>
-          </div>
-          <div class="flex flex-wrap">
-            <router-link  :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type , state: anime.state}}" tag="button" class="text-xs font-semibold rounded-full px-4 py-1 mx-3 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-gray-600">
-              <i class="fas fa-headphones"></i>
-              Watch
-            </router-link>
-            <!--<button class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-gray-600">Message</button> -->
-          </div>
-				</div>
+  <div class="card container mx-auto">
+    <section class="movie_image">
+      <img class="movie_poster" :src="anime.poster" />
+    </section>
+
+    <section class="center">
+      <div class="about_movie">
+        <h3>{{anime.title}}</h3>
+        <div class="movie_info">
+          <p style="color: #ffbf00;">{{anime.state}}</p>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="movie_desc">
+          <p>{{anime.synopsis.slice(0 , 150)}} ...</p>
+        </div>
+
+        <router-link :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type , state: anime.state}}" tag="button" class="watch"> 
+           <i class="fas fa-headphones"></i>Watch Now!
+        </router-link>
       </div>
-    </div>
+    </section>
+    <svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none;"></path>
+    </svg>
   </div>
 </template>
 
 
 <script>
-  import Footer from '../views/Footer'
+import Footer from "../views/Footer";
 
-  export default{
-    props: ['anime'],
-    components:{
-      Footer
-    }
-  };
+export default {
+  props: ["anime"],
+  components: {
+    Footer
+  }
+};
 </script>
 
+
+<style>
+</style>
