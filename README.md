@@ -41,7 +41,7 @@ Apologies!
 - [x] Scraping jkanime web page - *in process* 
 - [x] Good Documentation - *in process*
 - [ ] Tests - *SOON!*
-- [ ] Deployment -  *SOON!*
+- [x] Deployment -  *SOON!*
 
 ## Branches
 - [x] master branch - *in use*
