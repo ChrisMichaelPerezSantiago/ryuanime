@@ -9,7 +9,7 @@
           <video 
             id="video"
             controls
-          ><source :src="this.videos.video" type="video/mp4"></video>
+          ><source id="_video" :src="this.videos.video" type="video/mp4"></video>
         </div>
         <!-- video info -->
         <div class="flex flex-wrap items-end">
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+  import fetch from 'node-fetch'
   import swal from 'sweetalert';
   import {mapState} from 'vuex'
   import store from '../store/store'
@@ -83,6 +84,8 @@
       },
       "videos.video": function(value){
         this.videos.video = value;
+        let src = this.videos.video;
+        this.display(src);
         document.getElementById('video').load();
       }
     },
@@ -91,6 +94,19 @@
         const vuex = JSON.parse(localStorage.getItem('vuex'));
         delete vuex.videos;
         localStorage.setItem("vuex", JSON.stringify(vuex));
+      }
+    },
+    methods:{
+      createObjectURL: function(object){
+        return (window.URL) 
+          ? window.URL.createObjectURL(object)
+          : window.webkitURL.createObjectURL(object);
+      },
+      display: async function(videoStream){
+        var video = document.getElementById('_video');
+        let blob = await fetch(videoStream , {mode: 'no-cors'}).then(r => r.blob());
+        var videoUrl = this.createObjectURL(blob);
+        video.src = videoUrl;
       }
     },
     beforeDestroy(){
