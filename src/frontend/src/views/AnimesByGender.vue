@@ -4,7 +4,7 @@
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
         <div class="flex flex-col">
-            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Animes by Gender</h3>
+            <h3 class="text-grey-darkest mb-1 font-extrabold">👑 Animes by Genres</h3>
             <div class="text-grey-dark text-sm truncate">
               💖 Enjoy the world of anime 
             </div>
@@ -24,7 +24,7 @@
         </div>
         <!-- href links to platforms and social media -->
         <div class="flex justify-start items-center text-gray-500">
-          <h1>Genders</h1>
+          <h1>Genres</h1>
           <select class="list-reset border border-purple-200 rounded m-3 w-20 font-sans" v-model="gender">
             <option v-for="(char , index) in options"
               :value="char"

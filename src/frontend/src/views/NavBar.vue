@@ -44,7 +44,7 @@
            </div>
            <div class="flex items-center mb-3 px-4">
                <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
-               <router-link to="/AnimesByGender"><span class="text-white opacity-75">ლ Gender</span></router-link>
+               <router-link to="/AnimesByGender"><span class="text-white opacity-75">ლ Genres</span></router-link>
            </div>
        </div>
        <div class="mb-8">
