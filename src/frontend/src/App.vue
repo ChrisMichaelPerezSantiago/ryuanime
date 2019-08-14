@@ -1,18 +1,18 @@
 <template>
   <div id="app" class="font-sans bg-white antialiased h-screen flex">
-    <NavBar/>
-    <router-view />
-    <Footer/>
+    <Default>
+      <router-view />
+    </Default>
   </div>
 </template>
 
 
 <script>
-  import NavBar from "./views/NavBar";
+  import Default from './layouts/Default'
 
   export default {
     components: {
-      NavBar,
+      Default,
     }
   };
 </script>
