@@ -1,10 +1,12 @@
 <template>
-    <div class="flex md:flex-row-reverse flex-wrap">
+    <div class="flex flex-wrap">
         <NavBar/>
-        <!-- layouts content -->
-        <slot />
-        <!-- footer -->
-        <Footer />
+        <div class="w-full md:w-5/6">
+            <!-- layouts content -->
+            <slot />
+            <!-- footer -->
+            <Footer />
+        </div>
     </div>
 </template>
 

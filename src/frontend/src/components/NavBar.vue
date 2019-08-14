@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-indigo-900 text-purple-lighter w-full md:w-1/5 px-2 fixed bottom-0 md:pt-8 md:top-0 md:left-0 h-16 md:h-screen">
-      <div class=" mb-2 mt-3 px-4 flex ">
+  <div class="bg-indigo-900 text-purple-lighter md:w-1/6 pb-6 hidden md:block">
+      <div class="text-white mb-2 mt-3 px-4 flex justify-between">
         <div class="flex-auto">
           <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Ryuanime</h1>
           <div class="flex items-center mb-6">

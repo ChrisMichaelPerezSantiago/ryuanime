@@ -1,6 +1,6 @@
 <template>
   <!-- all content -->
-  <div class="w-full md:w-4/5 bg-white overflow-hidden">
+  <div class="bg-white overflow-hidden">
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
         <div class="flex flex-col">
