@@ -4,18 +4,13 @@
       <h2>{{title}}</h2>
       <h2>┏(＾0＾)┛┗(＾0＾) ┓</h2>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
-  import Footer from "./Footer";
 
   export default {
     name: "NotFound",
-    components:{
-      Footer
-    },
     data(){
       return{
         title: 'Not Found'

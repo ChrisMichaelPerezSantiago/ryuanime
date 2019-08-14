@@ -16,7 +16,7 @@
           <p>{{anime.synopsis.slice(0 , 150)}} ...</p>
         </div>
 
-        <router-link :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type , state: anime.state}}" tag="button" class="watch"> 
+        <router-link :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type , state: anime.state}}" tag="button" class="watch">
            <i class="fas fa-headphones"></i>Watch Now!
         </router-link>
       </div>
@@ -29,13 +29,8 @@
 
 
 <script>
-import Footer from "../views/Footer";
-
 export default {
   props: ["anime"],
-  components: {
-    Footer
-  }
 };
 </script>
 
