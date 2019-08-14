@@ -1,4 +1,4 @@
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 <h1 align="center">Welcome to ryuanime 👋</h1>
 <p>
@@ -355,14 +355,18 @@ _This README was generated with ❤️ by [readme-md-generator](https://github.c
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/chrisperezsantiago/"><img src="https://avatars0.githubusercontent.com/u/21962584?v=4" width="75px;" alt="Chris Michael"/><br /><sub><b>Chris Michael</b></sub></a><br /><a href="#question-ChrisMichaelPerezSantiago" title="Answering Questions">💬</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Code">💻</a> <a href="#design-ChrisMichaelPerezSantiago" title="Design">🎨</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Documentation">📖</a> <a href="#ideas-ChrisMichaelPerezSantiago" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ChrisMichaelPerezSantiago" title="Maintenance">🚧</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=ChrisMichaelPerezSantiago" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://w3cj.sh"><img src="https://avatars0.githubusercontent.com/u/14241866?v=4" width="75px;" alt="CJ R."/><br /><sub><b>CJ R.</b></sub></a><br /><a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=w3cj" title="Code">💻</a> <a href="#content-w3cj" title="Content">🖋</a> <a href="#example-w3cj" title="Examples">💡</a> <a href="#ideas-w3cj" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://www.kinoshita.eti.br"><img src="https://avatars1.githubusercontent.com/u/304786?v=4" width="75px;" alt="Bruno P. Kinoshita"/><br /><sub><b>Bruno P. Kinoshita</b></sub></a><br /><a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/issues?q=author%3Akinow" title="Bug reports">🐛</a> <a href="https://github.com/ChrisMichaelPerezSantiago/ryuanime/commits?author=kinow" title="Code">💻</a> <a href="#ideas-kinow" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

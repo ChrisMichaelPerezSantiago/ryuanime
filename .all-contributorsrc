@@ -36,6 +36,17 @@
         "example",
         "ideas"
       ]
+    },
+    {
+      "login": "kinow",
+      "name": "Bruno P. Kinoshita",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/304786?v=4",
+      "profile": "http://www.kinoshita.eti.br",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
