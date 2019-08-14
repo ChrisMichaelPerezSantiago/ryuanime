@@ -57,7 +57,7 @@
 <script>
   import LatestAnime from '../components/LatestAnime'
   import DropDownSection from '../components/DropDownSection'
-  import {mapState} from 'vuex'
+  import {mapState , mapGetters} from 'vuex'
   import store from '../store/store'
 
   export default {
