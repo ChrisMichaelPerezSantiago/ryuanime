@@ -2,7 +2,7 @@ export const state = {
   latest: [],
   videos: [],
   animesByAlpha: [],
-  animesByGender: [],
+  animesByGenre: [],
   searchAnimeList: [],
   movies: [],
   ovas: [],
