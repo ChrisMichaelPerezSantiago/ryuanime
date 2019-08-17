@@ -19,7 +19,7 @@
           { section: "Latest"   ,  to: "/" },
           { section: "Search"   ,  to: "/SearchAnime" },
           { section: "Alphabet" ,  to: "/AnimesByLetter" },
-          { section: "Genders"  ,  to: "/AnimesByGender" },
+          { section: "Genres"  ,  to: "/AnimesByGender" },
           { section: "Movies"   ,  to: "/Movies" },
           { section: "Ovas"     ,  to: "/Ovas"}
         ]
