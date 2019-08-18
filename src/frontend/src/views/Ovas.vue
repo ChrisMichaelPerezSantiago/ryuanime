@@ -1,8 +1,8 @@
 <template>
   <AnimeListing
     page-title="Ova"
-    :pagination="true"
-    :animes="ovas"
+    :paginated-content="ovas"
+    :animes="ovas.data"
     v-on:page-selected="pageSelected"
   ></AnimeListing>
 </template>

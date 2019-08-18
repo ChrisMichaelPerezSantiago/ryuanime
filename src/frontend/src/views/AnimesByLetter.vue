@@ -2,10 +2,10 @@
   <AnimeListing
     page-title="Animes by Letter"
     menu-title="Alphabet"
-    :pagination="true"
     :menu-options="options"
     :menu-initial-value="letter"
-    :animes="animesByAlpha"
+    :paginated-content="animesByAlpha"
+    :animes="animesByAlpha.data"
     v-on:menu-item-selected="letterSelected"
     v-on:page-selected="pageSelected"
   ></AnimeListing>

@@ -2,10 +2,10 @@
   <AnimeListing
     page-title="Animes by Genres"
     menu-title="Genres"
-    :pagination="true"
     :menu-options="options"
     :menu-initial-value="genre"
-    :animes="animesByGender"
+    :paginated-content="animesByGender"
+    :animes="animesByGender.data"
     v-on:menu-item-selected="genreSelected"
     v-on:page-selected="pageSelected"
   ></AnimeListing>

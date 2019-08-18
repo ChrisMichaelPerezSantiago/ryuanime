@@ -18,5 +18,5 @@ export const paginator = (items, page, per_page) => {
   console.log("Paginate Item: ", paginatedItems);
   console.log("Pagin Content: ", paginContent);
   const total = paginContent.total;
-  return paginContent.data;
+  return paginContent;
 };

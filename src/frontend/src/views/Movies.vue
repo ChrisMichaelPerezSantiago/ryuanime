@@ -1,8 +1,8 @@
 <template>
   <AnimeListing
     page-title="Movies"
-    :pagination="true"
-    :animes="movies"
+    :paginated-content="movies"
+    :animes="movies.data"
     v-on:page-selected="pageSelected"
   ></AnimeListing>
 </template>
