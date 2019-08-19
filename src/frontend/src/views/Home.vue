@@ -1,9 +1,5 @@
 <template>
-  <AnimeListing
-    page-title="Last Animes Added"
-    :pagination="false"
-    :animes="latest"
-  ></AnimeListing>
+  <AnimeListing page-title="Last Animes Added" :animes="latest"></AnimeListing>
 </template>
 
 <script>

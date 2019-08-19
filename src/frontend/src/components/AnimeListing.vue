@@ -87,9 +87,9 @@ has selected an item from the drop down menu, or changed the listing page.
     <!-- pagination control, displayed only when pagination prop flag is true -->
     <paginate
       class="paginator-container list-reset border border-purple-200 rounded w-auto font-sans"
-      v-if="pagination"
+      v-if="paginatedContent"
       v-model="page"
-      :page-count="animes.length"
+      :page-count="paginatedContent.total_pages"
       :page-range="3"
       :margin-pages="2"
       :click-handler="() => $emit('page-selected', this.page)"
@@ -156,7 +156,10 @@ export default {
       default: ""
     },
     // anime data controls
-    pagination: Boolean
+    paginatedContent: {
+      type: Object,
+      required: false
+    }
   }
 };
 </script>
