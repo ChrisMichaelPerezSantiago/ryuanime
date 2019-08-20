@@ -23,7 +23,7 @@
     "@types/cheerio": "^0.22.11",
     "@types/cors": "^2.8.5",
     "@types/events": "^3.0.0",
-    "@types/helmet": "0.0.43",
+    "@types/helmet": "0.0.44",
     "@types/jsdom": "^12.2.3",
     "@types/node-fetch": "^2.3.7",
     "add": "^2.0.6",
