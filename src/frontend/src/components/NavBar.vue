@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-900 text-purple-lighter md:w-1/6 pb-6 hidden md:block">
+  <div class="bg-indigo-900 text-purple-lighter flex-none w-64 pb-6 hidden md:block">
       <div class="text-white mb-2 mt-3 px-4 flex justify-between">
         <div class="flex-auto">
           <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Ryuanime</h1>
@@ -67,5 +67,3 @@
        </div>
   </div>
 </template>
-
-

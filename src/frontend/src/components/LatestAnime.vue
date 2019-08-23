@@ -17,7 +17,7 @@
         </div>
 
         <router-link :to="{name: 'LatestAnimeVideo' , params:{id: anime.id , title: anime.title , synopsis: anime.synopsis , poster: anime.poster , type: anime.type , state: anime.state}}" tag="button" class="watch">
-           <i class="fas fa-headphones"></i>Watch Now!
+          <i class="fas fa-headphones"></i>Watch Now!
         </router-link>
       </div>
     </section>

@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-wrap">
+    <div class="flex">
         <NavBar/>
-        <div class="w-full md:w-5/6">
+        <div class="flex-1 flex flex-col bg-white overflow-hidden">
             <!-- layouts content -->
             <slot />
             <!-- footer -->

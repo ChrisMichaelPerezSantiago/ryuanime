@@ -12,7 +12,7 @@ has selected an item from the drop down menu, or changed the listing page.
 -->
 <template>
   <!-- all content -->
-  <div class="bg-white overflow-hidden">
+  <div class="flex-1 flex flex-col bg-white overflow-hidden">
     <!-- top bar -->
     <div class="border-b flex px-6 py-2 items-center flex-none">
       <div class="flex flex-col">
@@ -59,7 +59,7 @@ has selected an item from the drop down menu, or changed the listing page.
     </div>
 
     <!-- content inside -->
-    <div class="px-6 py-4 flex-1" id="style-1">
+    <div class="px-6 py-4 flex-1 overflow-y-scroll scrollbar" id="style-1">
       <!-- [TEMPORARY SOLUTION] navbar for phones -->
       <DropDownSection class="ddSection"></DropDownSection>
       <div v-if="isLoading">
