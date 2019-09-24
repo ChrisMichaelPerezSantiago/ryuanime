@@ -1,15 +1,17 @@
 import express from 'express';
 import { Router } from 'express';
-import data from './endpoints.controller';
+import data_v1 from './v1.endpoints.controller';
 
-const router = Router();
+const router_v1 = Router();
 
-router.get('/', (req: express.Request, res: express.Response) => {
+router_v1.get('/', (req: express.Request, res: express.Response) => {
   res.json({
-    message: "(づ｡◕‿‿◕｡)づ"
+    message: "(づ｡◕‿‿◕｡)づ API V1"
   });
 });
 
-router.use('/', data);
+router_v1.use('/', data_v1);
 
-export { router };
+export{
+  router_v1, 
+};

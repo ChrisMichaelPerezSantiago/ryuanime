@@ -4,7 +4,7 @@ import * as express from "express";
 import * as cors from 'cors';
 import * as bodyparser from 'body-parser';
 import * as helmet from 'helmet';
-import { router } from './api/index';
+import {router_v1} from './api/index';
 import middleware from "./middleware/index";
 
 class App {
@@ -29,7 +29,7 @@ class App {
         message: 'ᕦ(ò_óˇ)ᕤ'
       });
     });
-    this.app.use('/api/v1', router);
+    this.app.use('/api/v1', router_v1);
     this.app.use(middleware);
   }
 }

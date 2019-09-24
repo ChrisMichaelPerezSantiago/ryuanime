@@ -41,7 +41,6 @@ router.get('/letter/:letter/:page', (req: express.Request, res: express.Response
     });
 });
 
-
 router.get('/latest', (req: express.Request, res: express.Response) => {
   V1_API.lastAnimesAdded()
     .then(animes => {
@@ -61,7 +60,6 @@ router.get('/calender' , (req: express.Request , res: express.Response) =>{
       })
     });
 });
-
 
 router.get('/genders/:gender/:page' , (req: express.Request , res: express.Response) =>{
   let gender: string = req.params.gender.toLowerCase();
@@ -93,8 +91,5 @@ router.get('/ovas/:page' , (req: express.Request , res: express.Response) =>{
       });
     });
 });
-
-
-
 
 export default router;
