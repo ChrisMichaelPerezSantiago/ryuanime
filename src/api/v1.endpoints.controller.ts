@@ -28,6 +28,21 @@ router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) 
     });
 });
 
+router.get('/video/:id/:chapter/:serverNumber', (req: express.Request, res: express.Response) => {
+  const id: string = req.params.id;
+  const chapter: number = req.params.chapter;
+  const serverNumber: number =req.params.serverNumber;
+  V1_API.getAnimeVideoByServer(id, chapter , serverNumber)
+    .then(video => {
+      res.status(200).json({
+        video
+      });
+    }).catch((err) =>{
+      console.log(err)
+    });
+});
+
+
 router.get('/letter/:letter/:page', (req: express.Request, res: express.Response) => {
   const letter: string = req.params.letter.toUpperCase();
   const page: number = req.params.page;
