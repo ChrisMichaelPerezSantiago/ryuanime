@@ -99,6 +99,38 @@ npm run electron:serve
 }
 ```
 
+### GET /video/[id]/[chapter]/[serverNumber]
+## 📣Read this please!📣
+*I recommend that you use this endpoint **`/video/[id]/[chapter]/[serverNumber]`** to obtain the videos, since you can refer directly to the server where the video comes from.*
+*If you get to use the endpoint **`/anime/[id]/[chapter]`**, surely there will be series that you will not be able to get the videos*
+
+| id          | chapter         |   server number |
+| ----------- | --------------- | ----------------
+| anime title | episode number  |    [1 .. 7]     |
+
+
+| server         | number    |  
+| -------------- | -----------| 
+| Desu           |   1        | 
+| Xtreme S       |   2        |
+| MixDrop        |   3        |
+| Okru           |   4        |
+| Openload       |   5        |
+| RapidVideo     |   6        |
+| Verystream     |   7        |
+
+```json
+// 20191009171210
+// http://localhost:3000/api/v1/video/boruto-naruto-next-generations/1/1
+
+{
+  "video": [
+    "https://jkanime.net/stream/jkmedia/04bcce3274dfe2351ac5ebbf27031a56/fa0b00de20f2ba354db895a1e954c6c4/1/c56a43a4f34c542c7708000aab29c8b1/"
+  ]
+}
+```
+
+
 ### GET /search/[title] 
 - *For now only returns the titles of the first page of jkanime `10 title per pages`*
 
