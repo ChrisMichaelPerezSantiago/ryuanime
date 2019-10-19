@@ -244,21 +244,26 @@ async function getAnimeVideo(id: any, chapter: any) {
   }
 }
 
-async function getAnimeVideoByServer(id: any, chapter: any , serverNumber: any) {
+async function getAnimeVideoByServer(id, chapter, serverNumber) {
   const { data } = await axios.get(`${url}/${id}/${chapter}/#option${serverNumber}`);
   const $ = cheerio.load(data);
   const scripts = $('script');
-  for (let i = 0; i < scripts.length; i++) {
+  for(let i = 0; i < scripts.length; i++){
     const $script = $(scripts[i]);
     const contents = $script.html();
-    // There is a script on the page that will load the iframe dynamically
-    // Here we find the script and then request the iframe URL directly
-    if ((contents || '').includes('var video = [];')) {
-      const videoPageURL = contents.split(`video[${serverNumber}] = \'<iframe class="player_conte" src="`)[1].split('"')[0];
-      return getVideoURL(videoPageURL);
+    try{
+      // There is a script on the page that will load the iframe dynamically
+      // Here we find the script and then request the iframe URL directly
+      if ((contents || '').includes('var video = [];')) {
+        let videoPageURL = contents.split(`video[${serverNumber}] = \'<iframe class="player_conte" src="`)[1].split('"')[0];
+        return getVideoURL(videoPageURL);
+      }
+    }catch(err) {
+      return null;
     }
   }
 }
+
 
 
 async function getVideoURL(url: string) {
@@ -269,7 +274,7 @@ async function getVideoURL(url: string) {
   if (video.length) {
     // Sometimes the video is directly embedded
     const src = $(video).find('source').attr('src');
-    return src
+    return src || null;
   } else {
     // If the video is not embedded, there is obfuscated code that will create a video element
     // Here we run the code to get the underlying video url
@@ -282,7 +287,7 @@ async function getVideoURL(url: string) {
     // Kind of dangerous, but the code is very obfuscated so its hard to tell how it decrypts the URL
     eval($script2);
     // The code above sets a variable called ss that is the mp4 URL
-    return (l as any).ss || `Video not available on the server`;
+    return (l as any).ss || null;
   }
 }
 /*************************************************************************************************************/
