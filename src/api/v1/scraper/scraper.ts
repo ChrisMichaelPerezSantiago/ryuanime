@@ -8,7 +8,7 @@ import getAnimeCalender from './calendar';
 
 const axios = require('axios');
 
-const getAnimeOvas = async(page: number) =>{
+const getAnimeOvas = async(page: string) =>{
   const res = await fetch(`${ovasUrl}/${page}`);
   const body = await res.text();
   const promises = [];
@@ -33,7 +33,7 @@ const getAnimeOvas = async(page: number) =>{
   return animes;
 }
 
-const getAnimeMovies = async(page: number) =>{
+const getAnimeMovies = async(page: string) =>{
   const res = await fetch(`${moviesUrl}/${page}`);
   const body = await res.text();
   const promises = [];
@@ -58,7 +58,7 @@ const getAnimeMovies = async(page: number) =>{
   return animes;
 }
 
-const getAnimesByGender = async(gender: string , page: number) =>{
+const getAnimesByGender = async(gender: string , page: string) =>{
   const res = await fetch(`${genderUrl}${gender}/${page}`);
   const body = await res.text();
   const promises = [];
@@ -155,7 +155,7 @@ const lastAnimesAdded = async () => {
 //}
 
 
-const getAnimesListByLetter = async (letter: string, page: number) => {
+const getAnimesListByLetter = async (letter: string, page: string) => {
   const res = await fetch(`${searchUrlLetter}${letter}/${page}`);
   const body = await res.text();
   const promises = [];
@@ -254,11 +254,12 @@ async function getAnimeVideoByServer(id: any, chapter: any , serverNumber: any) 
     // There is a script on the page that will load the iframe dynamically
     // Here we find the script and then request the iframe URL directly
     if ((contents || '').includes('var video = [];')) {
-      const videoPageURL = contents.split('video[1] = \'<iframe class="player_conte" src="')[1].split('"')[0];
+      const videoPageURL = contents.split(`video[${serverNumber}] = \'<iframe class="player_conte" src="`)[1].split('"')[0];
       return getVideoURL(videoPageURL);
     }
   }
 }
+
 
 async function getVideoURL(url: string) {
   // This requests the underlying iframe page
@@ -281,7 +282,7 @@ async function getVideoURL(url: string) {
     // Kind of dangerous, but the code is very obfuscated so its hard to tell how it decrypts the URL
     eval($script2);
     // The code above sets a variable called ss that is the mp4 URL
-    return (l as any).ss
+    return (l as any).ss || `Video not available on the server`;
   }
 }
 /*************************************************************************************************************/
