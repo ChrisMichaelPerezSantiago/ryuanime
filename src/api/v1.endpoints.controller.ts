@@ -17,7 +17,7 @@ router.get('/search/:title', (req: express.Request, res: express.Response) => {
 
 router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) => {
   const id: string = req.params.id;
-  const chapter: number = req.params.chapter;
+  const chapter: string = req.params.chapter;
   V1_API.getAnimeVideo(id, chapter)
     .then(video => {
       res.status(200).json({
@@ -30,8 +30,8 @@ router.get('/anime/:id/:chapter', (req: express.Request, res: express.Response) 
 
 router.get('/video/:id/:chapter/:serverNumber', (req: express.Request, res: express.Response) => {
   const id: string = req.params.id;
-  const chapter: number = req.params.chapter;
-  const serverNumber: number =req.params.serverNumber;
+  const chapter: string = req.params.chapter;
+  const serverNumber: string = req.params.serverNumber;
   V1_API.getAnimeVideoByServer(id, chapter , serverNumber)
     .then(video => {
       res.status(200).json({
@@ -45,7 +45,7 @@ router.get('/video/:id/:chapter/:serverNumber', (req: express.Request, res: expr
 
 router.get('/letter/:letter/:page', (req: express.Request, res: express.Response) => {
   const letter: string = req.params.letter.toUpperCase();
-  const page: number = req.params.page;
+  const page: string = req.params.page;
   V1_API.getAnimesListByLetter(letter , page)
     .then(animes => {
       res.status(200).json({
@@ -78,7 +78,7 @@ router.get('/calender' , (req: express.Request , res: express.Response) =>{
 
 router.get('/genders/:gender/:page' , (req: express.Request , res: express.Response) =>{
   let gender: string = req.params.gender.toLowerCase();
-  let page: number = req.params.page;
+  let page: string = req.params.page;
   V1_API.getAnimesByGender(gender , page)
     .then(animes =>{
       res.status(200).json({
@@ -88,7 +88,7 @@ router.get('/genders/:gender/:page' , (req: express.Request , res: express.Respo
 });
 
 router.get('/movies/:page' , (req: express.Request , res: express.Response) =>{
-  let page: number = req.params.page;
+  let page: string = req.params.page;
   V1_API.getAnimeMovies(page)
     .then(movies =>{
       res.status(200).json({
@@ -98,7 +98,7 @@ router.get('/movies/:page' , (req: express.Request , res: express.Response) =>{
 });
 
 router.get('/ovas/:page' , (req: express.Request , res: express.Response) =>{
-  let page: number = req.params.page;
+  let page: string = req.params.page;
   V1_API.getAnimeOvas(page)
     .then(ovas =>{
       res.status(200).json({
