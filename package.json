@@ -8,7 +8,9 @@
     "lint": "eslint --fix src",
     "audit": "snyk test",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "jkanime"
@@ -43,7 +45,8 @@
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
-    "uninstall": "0.0.0"
+    "uninstall": "0.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
@@ -52,12 +55,12 @@
     "@types/puppeteer": "^1.12.4",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
-    "snyk": "^1.179.0",
     "supertest": "^4.0.2",
     "ts-node-dev": "^1.0.0-pre.40"
   },
   "engines": {
     "npm": ">=5.5.0",
     "node": ">=9.3.0"
-  }
+  },
+  "snyk": true
 }
