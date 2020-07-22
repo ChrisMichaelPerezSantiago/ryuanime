@@ -39,7 +39,7 @@
     "helmet": "^3.18.0",
     "jsdom": "^15.1.1",
     "node-fetch": "^2.6.0",
-    "puppeteer": "^1.18.0",
+    "puppeteer": "^5.2.1",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
