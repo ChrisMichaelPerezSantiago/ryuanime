@@ -20,7 +20,7 @@
     "axios": "^0.18.1",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "snyk": "^1.192.4",
     "sweetalert": "^2.1.2",
     "v-suggest": "^1.1.3",
