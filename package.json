@@ -51,7 +51,7 @@
     "@types/node": "^12.0.8",
     "@types/puppeteer": "^1.12.4",
     "mocha": "^6.1.4",
-    "nodemon": "^1.19.1",
+    "nodemon": "^2.0.10",
     "snyk": "^1.179.0",
     "supertest": "^4.0.2",
     "ts-node-dev": "^1.0.0-pre.40"
